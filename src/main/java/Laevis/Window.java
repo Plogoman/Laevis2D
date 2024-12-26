@@ -1,6 +1,9 @@
 package Laevis;
 
 import LaevisUtilities.Time;
+import imgui.ImGui;
+import imgui.ImGuiIO;
+import imgui.flag.ImGuiConfigFlags;
 import org.lwjgl.*;
 import org.lwjgl.glfw.*;
 import org.lwjgl.opengl.*;
@@ -11,11 +14,12 @@ import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.system.MemoryUtil.*;
 
 public class Window {
-    private final int Width;
-    private final int Height;
+    private int Width;
+    private int Height;
     private final String Title;
     private long glfwWindow;
     private boolean FadeToBlack;
+    private ImGuiLayer imGuiLayer;
     public float r, g, b, a;
 
     private static Window window = null;
@@ -27,6 +31,7 @@ public class Window {
         this.Width = 1920;
         this.Height = 1080;
         this.Title = "Game Engine";
+
 
         this.r = 0;
         this.g = 0;
@@ -58,6 +63,7 @@ public class Window {
         if (Window.window == null) {
             Window.window = new Window();
         }
+
         return Window.window;
     }
 
@@ -66,11 +72,19 @@ public class Window {
         return Get().CurrentScene;
     }
 
+
+    //init window very important for it to work
+    public void init(){
+
+        imGuiLayer=new ImGuiLayer();
+        imGuiLayer.imguiglfw.init(glfwWindow,true);
+        imGuiLayer.implGl3.init("#version 330 core");
+    }
+
     //Run Engine
     public void Run() {
         System.out.println("LWJGL Version: " + Version.getVersion());
 
-        EngineInit();
         EngineLoop();
 
         glfwFreeCallbacks(glfwWindow);
@@ -83,40 +97,30 @@ public class Window {
     }
 
     //Initialize Engine
-    public void EngineInit() {
+    public void EngineInit() { //init
+        // Setup an error callback. The default implementation
+        // will print the error message in System.err.
         GLFWErrorCallback.createPrint(System.err).set();
 
-        if (!glfwInit()) {
-            throw new IllegalStateException("Unable to Initialize GLFW");
+        // Initialize GLFW. Most GLFW functions will not work before doing this.
+        if ( !glfwInit() ) {
+            System.out.println("Unable to initialize GLFW");
+            System.exit(-1);
         }
 
-        glfwDefaultWindowHints();
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 
         glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
+        glfwWindow = glfwCreateWindow(1920, 1080, "My Window", NULL, NULL);
 
-        glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
-
-        glfwWindowHint(GLFW_MAXIMIZED, GLFW_TRUE);
-
-        glfwWindow = glfwCreateWindow(this.Width, this.Height, this.Title, NULL, NULL); //glfwGetPrimaryMonitor()
         if (glfwWindow == NULL) {
-            throw new IllegalStateException("Failed to create the GLFW Window");
+            System.out.println("Unable to create window");
+            System.exit(-1);
         }
 
-        //Event Handlers Callbacks
-        glfwSetCursorPosCallback(glfwWindow, MouseListener::MousePositionCallback);
-
-        glfwSetMouseButtonCallback(glfwWindow, MouseListener::MouseButtonCallback);
-
-        glfwSetScrollCallback(glfwWindow, MouseListener::MouseScrollCallback);
-
-        glfwSetKeyCallback(glfwWindow, KeyListener::KeyCallback);
-
-
         glfwMakeContextCurrent(glfwWindow);
-
         glfwSwapInterval(1);
-
         glfwShowWindow(glfwWindow);
 
         GL.createCapabilities();
@@ -134,7 +138,7 @@ public class Window {
         float DeltaTime = -1.0f;
 
         while (!glfwWindowShouldClose(glfwWindow)) {
-            glfwPollEvents();
+
 
             glClearColor(r, g, b, a);
 
@@ -153,12 +157,56 @@ public class Window {
             if (KeyListener.isKeyPressed(GLFW_KEY_SPACE)) {
                 FadeToBlack = true;
             }
+            if(DeltaTime>=0){
+                CurrentScene.SceneUpdate(DeltaTime);
+            }
+            ImGui.newFrame();                      // Start a new frame for ImGui (sets up the internal state for a new frame)
+            imGuiLayer.implGl3.newFrame();          // Prepare OpenGL renderer for the new frame
+            imGuiLayer.imguiglfw.newFrame();        // Prepare GLFW for the new frame
 
+            imGuiLayer.ImGui();                    // Render your ImGui UI elements (create windows, buttons, etc.)
+
+            ImGui.endFrame();
+            ImGui.updatePlatformWindows();
+            ImGui.renderPlatformWindowsDefault();
+
+            ImGui.render();                         // Render the ImGui draw data to be processed by the renderer
+            imGuiLayer.implGl3.renderDrawData(ImGui.getDrawData());
             glfwSwapBuffers(glfwWindow);
+            glfwPollEvents();
+
 
             EndTime = Time.GetTime();
             DeltaTime = EndTime - BeginTime;
             BeginTime = EndTime;
         }
+
+    }
+    public static Window get() {
+        if (Window.window == null) {
+            Window.window = new Window();
+        }
+
+        return Window.window;
+    }
+
+    public static Scene getScene() {
+        return get().CurrentScene;
+    }
+
+    public static int getWidth() {
+        return get().Width;
+    }
+
+    public static int getHeight() {
+        return get().Height;
+    }
+
+    public static void setWidth(int newWidth) {
+        get().Width = newWidth;
+    }
+
+    public static void setHeight(int newHeight) {
+        get().Height = newHeight;
     }
 }
