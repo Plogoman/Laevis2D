@@ -1,4 +1,6 @@
-package Laevis;
+package scenes;
+
+import Laevis.Window;
 
 public class LevelScene extends Scene {
     public LevelScene() {

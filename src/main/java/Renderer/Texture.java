@@ -13,7 +13,13 @@ public class Texture {
     private int TextureID;
     private int Width, Height;
 
-    public Texture(String FilePath) {
+/*
+    public Texture(String FilePath){
+
+    }
+*/
+
+    public void init(String filePath){
         this.FilePath = FilePath;
 
         //Generate Texture
@@ -37,7 +43,7 @@ public class Texture {
 
         stbi_set_flip_vertically_on_load(true);
 
-        ByteBuffer Image = stbi_load(FilePath, Width, Height, Channels, 0);
+        ByteBuffer Image = stbi_load(filePath, Width, Height, Channels, 0);
 
         if (Image != null) {
             this.Width = Width.get(0);
@@ -56,7 +62,6 @@ public class Texture {
 
         stbi_image_free(Image);
     }
-
     public void BindTexture() {
         glBindTexture(GL_TEXTURE_2D, TextureID);
     }
@@ -71,5 +76,8 @@ public class Texture {
 
     public int GetHeight() {
         return this.Height;
+    }
+    public int getTextureID(){
+        return TextureID;
     }
 }
