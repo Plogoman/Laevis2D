@@ -1,5 +1,7 @@
-package scenes;
+package Scenes;
 
+import Components.Component;
+import Components.ComponentDeserializer;
 import Laevis.*;
 import Renderer.Renderer;
 import com.google.gson.Gson;

@@ -1,8 +1,6 @@
-package Laevis;
+package Components;
 
 import imgui.ImGui;
-import imgui.type.ImFloat;
-import org.joml.Vector3d;
 import org.joml.Vector3f;
 import org.joml.Vector4f;
 
@@ -11,7 +9,7 @@ import java.lang.reflect.Modifier;
 
 public abstract class Component {
 
-    public transient GameObject GameObject = null;
+    public transient Laevis.GameObject GameObject = null;
 
     public void StartComponent() {
 

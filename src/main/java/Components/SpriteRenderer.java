@@ -1,7 +1,5 @@
 package Components;
 
-import Laevis.Component;
-import Laevis.GameObject;
 import Laevis.Transform;
 import Renderer.Texture;
 import org.joml.Vector2f;

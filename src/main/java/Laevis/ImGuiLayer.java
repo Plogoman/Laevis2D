@@ -1,6 +1,5 @@
 package Laevis;
 
-import Components.MouseControls;
 import imgui.*;
 import imgui.callback.ImStrConsumer;
 import imgui.callback.ImStrSupplier;
@@ -10,7 +9,7 @@ import imgui.flag.ImGuiKey;
 import imgui.flag.ImGuiMouseCursor;
 import imgui.gl3.ImGuiImplGl3;
 import imgui.glfw.ImGuiImplGlfw;
-import scenes.Scene;
+import Scenes.Scene;
 
 import static org.lwjgl.glfw.GLFW.*;
 

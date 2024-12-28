@@ -1,5 +1,7 @@
 package Laevis;
 
+import Components.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 

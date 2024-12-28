@@ -1,4 +1,4 @@
-package scenes;
+package Scenes;
 
 import Components.*;
 import Laevis.Camera;
@@ -17,7 +17,7 @@ public class LevelEditorScene extends Scene {
     private GameObject gameObject1;
     private Vector2f CameraOffsetLocal = new Vector2f(-50, 0);
 
-    MouseControls mouseControls=new MouseControls();
+    MouseControls mouseControls = new MouseControls();
 
     public LevelEditorScene() {
 
@@ -100,10 +100,8 @@ public class LevelEditorScene extends Scene {
 
     @Override
     public void SceneUpdate(float DeltaTime) {
-
         mouseControls.UpdateComponent(DeltaTime);
         System.out.println("FPS: " + (1.0f / DeltaTime));
-
 
         for (GameObject gameObject : this.GameObjects) {
             gameObject.UpdateGameObjects(DeltaTime);
@@ -112,7 +110,6 @@ public class LevelEditorScene extends Scene {
     }
     @Override
     public void imgui(){
-
         ImGui.begin("test window");
 
         ImVec2 WindowPos=new ImVec2();
@@ -129,27 +126,26 @@ public class LevelEditorScene extends Scene {
         for(int i=0;i<sprites.size();i++){
             Sprite sprite=sprites.GetSprite(i);
             if(sprite==null){
-                System.err.println("sprite at index "+i+"is invalid ");
+                System.err.println("sprite at index " + i + "is invalid ");
             }
             float spriteWidth=sprite.getWidth()*4;
             float spriteHeight=sprite.getHeight()*4;
             int id=sprite.getTexId();
             Vector2f[] Texcoords=sprite.GetTextureCoordinates();
-            ImGui.pushID(i);
 
-            if(ImGui.imageButton(id,spriteWidth,spriteHeight,Texcoords[0].x,Texcoords[0].y,
-                    Texcoords[2].x,Texcoords[2].y)){
-                GameObject object= PreFabs.generateSpriteObject(sprite,spriteWidth,spriteHeight);
+            ImGui.pushID(i);
+            if(ImGui.imageButton(id,spriteWidth,spriteHeight,Texcoords[0].x, Texcoords[0].y, Texcoords[2].x, Texcoords[2].y)) {
+                GameObject object = PreFabs.generateSpriteObject(sprite, spriteWidth, spriteHeight);
                 //attach this to mouse cursor
                 mouseControls.pickupObject(object);
-
             }
             ImGui.popID();
-            ImVec2 lastButtonPos= new ImVec2();
+
+            ImVec2 lastButtonPos = new ImVec2();
             ImGui.getItemRectMax(lastButtonPos);
-            float lastButtonX2= lastButtonPos.x;
-            float nextButtonX2=lastButtonX2+ IconSpacing.x +spriteWidth;
-            if(i+1<sprites.size() && nextButtonX2<WindowX2){
+            float lastButtonX2 = lastButtonPos.x;
+            float nextButtonX2 =lastButtonX2+ IconSpacing.x +spriteWidth;
+            if(i+1<sprites.size() && nextButtonX2<WindowX2) {
                 ImGui.sameLine();
             }
         }

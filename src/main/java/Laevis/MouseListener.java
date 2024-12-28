@@ -79,22 +79,23 @@ public class MouseListener {
     }
 
     public static float getOrthoX(){
-    float currentX=GetX();
-    currentX=(currentX/(float)Window.getWidth())*2.0f - 1.0f;
+        float currentX=GetX();
+        currentX=(currentX/(float)Window.getWidth())*2.0f - 1.0f;
 
-    Vector4f tmp=new Vector4f(0,0,0,1);
-    tmp.mul(Window.getScene().Camera().GetInverseProjection().mul(Window.getScene().Camera().GetInverseView()));
-    currentX=tmp.x;
-    return currentX;
+        Vector4f tmp = new Vector4f(0,0,0,1);
+        tmp.mul(Window.getScene().Camera().GetInverseProjection().mul(Window.getScene().Camera().GetInverseView()));
+        currentX=tmp.x;
+        return currentX;
     }
 
     public static float getOrthoY(){
-    float currentY=Window.getHeight()-GetY();
-    currentY=(currentY/(float)Window.getHeight())*2.0f -1.0f;
-    Vector4f tmp=new Vector4f(0,0,0,1);
-    tmp.mul(Window.getScene().Camera().GetInverseProjection().mul(Window.getScene().Camera().GetInverseView()));
-    currentY=tmp.y;
-    return -1;
+        float currentY = Window.getHeight()-GetY();
+        currentY = (currentY/(float)Window.getHeight())*2.0f -1.0f;
+        Vector4f tmp = new Vector4f(0,0,0,1);
+        tmp.mul(Window.getScene().Camera().GetInverseProjection().mul(Window.getScene().Camera().GetInverseView()));
+        currentY = tmp.y;
+
+        return -1;
     }
 
     public static float GetDx() {

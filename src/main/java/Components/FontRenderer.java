@@ -1,8 +1,5 @@
 package Components;
 
-import Laevis.Component;
-import Laevis.GameObject;
-
 public class FontRenderer extends Component {
 
     @Override
