@@ -1,145 +1,114 @@
-    package Scenes;
+package Scenes;
 
-    import Components.*;
-    import Laevis.Camera;
-    import Laevis.GameObject;
-    import Laevis.PreFabs;
-    import Laevis.Transform;
-    import LaevisUtilities.AssetPool;
-    import imgui.ImGui;
-    import imgui.ImVec2;
-    import org.joml.Vector2f;
-    import org.joml.Vector4f;
+import components.*;
+import imgui.ImGui;
+import imgui.ImVec2;
+import Laevis.Camera;
+import Laevis.GameObject;
+import Laevis.Prefabs;
+import Laevis.Transform;
+import org.joml.Vector2f;
+import org.joml.Vector4f;
+import LaevisUtilities.AssetPool;
 
-    public class LevelEditorScene extends Scene {
+public class LevelEditorScene extends Scene {
 
-        private static SpriteSheet sprites;
-        private GameObject gameObject1;
-        private Vector2f CameraOffsetLocal = new Vector2f(-50, 0);
+    private GameObject obj1;
+    private Spritesheet sprites;
+    SpriteRenderer obj1Sprite;
 
-        MouseControls mouseControls=new MouseControls();
+    MouseControls mouseControls = new MouseControls();
 
-        public LevelEditorScene() {
+    public LevelEditorScene() {
 
-        }
-
-        @Override
-        public void InitScene() {
-            LoadResources();
-
-            this.Camera = new Camera(CameraOffsetLocal);
-
-            sprites = AssetPool.GetSpriteSheet("Assets/Images/decorationsAndBlocks.png");
-            if(levelloaded){
-                this.gameObject1=GameObjects.get(0);
-                return;
-            }
-
-            Vector2f TransformPosition1 = new Vector2f(100, 100);
-            Vector2f TransformScale1 = new Vector2f(128, 128);
-
-            //TODO try to fix the missing textures shit and implement proper imgui menus
-            //added random z index values
-            SpriteRenderer gameObject1Sprite=new SpriteRenderer();
-            gameObject1 = new GameObject("Object 1", new Transform(TransformPosition1, TransformScale1),-1);
-            gameObject1.AddComponent(gameObject1Sprite);
-            gameObject1.AddComponent(new TestComponent());
-            gameObject1Sprite.setColor(new Vector4f(1,1,1,1));
-            this.AddGameObjectToScene(gameObject1);
-            this.activegameobject=gameObject1;
-
-    /*
-            SpriteRenderer gameObject2SpriteRendrer=new SpriteRenderer();
-            Sprite gameObject2Sprite=new Sprite();
-            GameObject gameObject2 = new GameObject("Object 2", new Transform(TransformPosition2, TransformScale2),2);
-            gameObject2.AddComponent(gameObject2SpriteRendrer);
-            gameObject2Sprite.setTexture(AssetPool.GetTexture("x"));
-            gameObject2SpriteRendrer.setSprite(gameObject2Sprite);
-            gameObject2SpriteRendrer.setColor(new Vector4f(1,1,1,1));
-            gameObject2.AddComponent(gameObject2SpriteRendrer);
-            this.AddGameObjectToScene(gameObject2);
-    */
-
-    /*
-            GameObject gameObject3 = new GameObject("Object 3", new Transform(TransformPosition3, TransformScale3),2);
-            gameObject3.AddComponent(new SpriteRenderer(Sprites.GetSprite(2)));
-            this.AddGameObjectToScene(gameObject3);
-
-            GameObject gameObject4 = new GameObject("Object 4", new Transform(TransformPosition4, TransformScale4),-1);
-            gameObject4.AddComponent(new SpriteRenderer(Sprites.GetSprite(3)));
-            this.AddGameObjectToScene(gameObject4);*/
-
-
-        }
-
-        private void LoadResources() {
-            AssetPool.GetShader("Assets/Shaders/default.glsl");
-
-            AssetPool.AddSpriteSheet(
-                "Assets/Images/decorationsAndBlocks.png",
-                new SpriteSheet(AssetPool.GetTexture("Assets/Images/decorationsAndBlocks.png"), 16, 16, 81, 0)
-            );
-        }
-        private  int spriteindex=0;
-        private float spriteFliptime=0.2f;
-        private float spriteFliptimeleft=0.0f;
-
-        @Override
-        public void SceneUpdate(float DeltaTime) {
-
-            mouseControls.UpdateComponent(DeltaTime);
-
-            System.out.println("FPS: " + (1.0f / DeltaTime));
-
-
-            for (GameObject gameObject : this.GameObjects) {
-                gameObject.UpdateGameObjects(DeltaTime);
-            }
-            this.Renderer.Render();
-        }
-        @Override
-        public void imgui(){
-
-            ImGui.begin("test window");
-
-            ImVec2 WindowPos=new ImVec2();
-            ImGui.getWindowPos(WindowPos);
-            ImVec2 WindowSize= new ImVec2();
-            ImGui.getWindowSize(WindowSize);
-            ImVec2 IconSpacing=new ImVec2();
-            ImGui.getStyle().getItemSpacing(IconSpacing);
-
-
-            //this is the actual window x as in translated to screen coords
-            float WindowX2=WindowPos.x+WindowSize.x;
-
-            for(int i=0;i<sprites.size();i++){
-                Sprite sprite=sprites.GetSprite(i);
-
-                float spriteWidth=sprite.getWidth()*4;
-                float spriteHeight=sprite.getHeight()*4;
-                int id=sprite.getTexId();
-                Vector2f[] Texcoords=sprite.GetTextureCoordinates();
-
-                ImGui.pushID(i);
-
-                if(ImGui.imageButton(id,spriteWidth,spriteHeight,Texcoords[0].x,Texcoords[0].y,
-                        Texcoords[2].x,Texcoords[2].y)){
-                    GameObject object= PreFabs.generateSpriteObject(sprite,spriteWidth,spriteHeight);
-                    //attach this to mouse cursor
-                    mouseControls.pickupObject(object);
-
-                }
-                ImGui.popID();
-                ImVec2 lastButtonPos= new ImVec2();
-                ImGui.getItemRectMax(lastButtonPos);
-                float lastButtonX2= lastButtonPos.x;
-                float nextButtonX2=lastButtonX2+ IconSpacing.x +spriteWidth;
-                if(i+1<sprites.size() && nextButtonX2<WindowX2){
-                    ImGui.sameLine();
-                }
-            }
-
-            ImGui.end();
-        }
     }
+
+    @Override
+    public void init() {
+        loadResources();
+        this.camera = new Camera(new Vector2f(-250, 0));
+        sprites = AssetPool.getSpritesheet("assets/images/spritesheets/decorationsAndBlocks.png");
+        if (levelLoaded) {
+            this.activeGameObject = gameObjects.get(0);
+            return;
+        }
+
+
+        obj1 = new GameObject("Object 1", new Transform(new Vector2f(200, 100),
+                new Vector2f(256, 256)), 2);
+        obj1Sprite = new SpriteRenderer();
+        obj1Sprite.setColor(new Vector4f(1, 0, 0, 1));
+        obj1.addComponent(obj1Sprite);
+        obj1.addComponent(new Rigidbody());
+        this.addGameObjectToScene(obj1);
+        this.activeGameObject = obj1;
+
+        GameObject obj2 = new GameObject("Object 2",
+                new Transform(new Vector2f(400, 100), new Vector2f(256, 256)), 3);
+        SpriteRenderer obj2SpriteRenderer = new SpriteRenderer();
+        Sprite obj2Sprite = new Sprite();
+        obj2Sprite.setTexture(AssetPool.getTexture("assets/images/blendImage2.png"));
+        obj2SpriteRenderer.setSprite(obj2Sprite);
+        obj2.addComponent(obj2SpriteRenderer);
+        this.addGameObjectToScene(obj2);
+    }
+
+    private void loadResources() {
+        AssetPool.getShader("assets/shaders/default.glsl");
+
+        // TODO: FIX TEXTURE SAVE SYSTEM TO USE PATH INSTEAD OF ID
+        AssetPool.addSpritesheet("assets/images/spritesheets/decorationsAndBlocks.png",
+                new Spritesheet(AssetPool.getTexture("assets/images/spritesheets/decorationsAndBlocks.png"),
+                        16, 16, 81, 0));
+        AssetPool.getTexture("assets/images/blendImage2.png");
+    }
+
+    @Override
+    public void update(float dt) {
+        mouseControls.update(dt);
+
+        for (GameObject go : this.gameObjects) {
+            go.update(dt);
+        }
+
+        this.renderer.render();
+    }
+
+    @Override
+    public void imgui() {
+        ImGui.begin("Test window");
+
+        ImVec2 windowPos = new ImVec2();
+        ImGui.getWindowPos(windowPos);
+        ImVec2 windowSize = new ImVec2();
+        ImGui.getWindowSize(windowSize);
+        ImVec2 itemSpacing = new ImVec2();
+        ImGui.getStyle().getItemSpacing(itemSpacing);
+
+        float windowX2 = windowPos.x + windowSize.x;
+        for (int i=0; i < sprites.size(); i++) {
+            Sprite sprite = sprites.getSprite(i);
+            float spriteWidth = sprite.getWidth() * 4;
+            float spriteHeight = sprite.getHeight() * 4;
+            int id = sprite.getTexId();
+            Vector2f[] texCoords = sprite.getTexCoords();
+
+            ImGui.pushID(i);
+            if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[0].x, texCoords[0].y, texCoords[2].x, texCoords[2].y)) {
+                GameObject object = Prefabs.generateSpriteObject(sprite, spriteWidth, spriteHeight);
+                mouseControls.pickupObject(object);
+            }
+            ImGui.popID();
+
+            ImVec2 lastButtonPos = new ImVec2();
+            ImGui.getItemRectMax(lastButtonPos);
+            float lastButtonX2 = lastButtonPos.x;
+            float nextButtonX2 = lastButtonX2 + itemSpacing.x + spriteWidth;
+            if (i + 1 < sprites.size() && nextButtonX2 < windowX2) {
+                ImGui.sameLine();
+            }
+        }
+
+        ImGui.end();
+    }
+}

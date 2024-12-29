@@ -1,19 +1,16 @@
-package Components;
-
-import Laevis.Component;
-import Laevis.GameObject;
+package components;
 
 public class FontRenderer extends Component {
 
     @Override
-    public void StartComponent() {
-        if (GameObject.GetComponent(SpriteRenderer.class) != null) {
+    public void start() {
+        if (gameObject.getComponent(SpriteRenderer.class) != null) {
             System.out.println("Found Font Renderer!");
         }
     }
 
     @Override
-    public void UpdateComponent(float DeltaTime) {
+    public void update(float dt) {
 
     }
 }

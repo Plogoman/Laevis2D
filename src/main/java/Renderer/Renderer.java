@@ -1,54 +1,52 @@
 package Renderer;
 
-import Components.SpriteRenderer;
+import components.SpriteRenderer;
 import Laevis.GameObject;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 public class Renderer {
-    private final int MAX_BATCH_SIZE = 100000;
-    private List<RenderBatch> Batches;
+    private final int MAX_BATCH_SIZE = 1000;
+    private List<RenderBatch> batches;
 
     public Renderer() {
-        this.Batches = new ArrayList<>();
+        this.batches = new ArrayList<>();
     }
 
-    public void AddRenderer(GameObject gameObject) {
-        SpriteRenderer spriteRenderer = gameObject.GetComponent(SpriteRenderer.class);
-        if (spriteRenderer != null) {
-            AddRenderer(spriteRenderer);
+    public void add(GameObject go) {
+        SpriteRenderer spr = go.getComponent(SpriteRenderer.class);
+        if (spr != null) {
+            add(spr);
         }
     }
 
-    public void AddRenderer(SpriteRenderer Sprite) {
-        boolean Added = false;
-
-        for (RenderBatch Batch : Batches) {
-            if (Batch.GetHasRoom() && (Batch.getzIndex() == Sprite.GameObject.getzIndex() )){
-                Texture texture = Sprite.GetTexture();
-                if (texture == null || (Batch.GetHasTexture(texture) || Batch.GetHasTextureRoom())) {
-                    Batch.AddSprite(Sprite);
-                    Added = true;
+    private void add(SpriteRenderer sprite) {
+        boolean added = false;
+        for (RenderBatch batch : batches) {
+            if (batch.hasRoom() && batch.zIndex() == sprite.gameObject.zIndex()) {
+                Texture tex = sprite.getTexture();
+                if (tex == null || (batch.hasTexture(tex) || batch.hasTextureRoom())) {
+                    batch.addSprite(sprite);
+                    added = true;
                     break;
                 }
             }
         }
 
-        if (!Added) {
-            RenderBatch NewBatch = new RenderBatch(MAX_BATCH_SIZE,Sprite.GameObject.getzIndex());
-            NewBatch.StartBatchRenderer();
-            Batches.add(NewBatch);
-            NewBatch.AddSprite(Sprite);
-            Collections.sort(Batches);
+        if (!added) {
+            RenderBatch newBatch = new RenderBatch(MAX_BATCH_SIZE, sprite.gameObject.zIndex());
+            newBatch.start();
+            batches.add(newBatch);
+            newBatch.addSprite(sprite);
+            Collections.sort(batches);
         }
     }
 
-    public void Render() {
-        for (RenderBatch Batch : Batches) {
-            Batch.RenderTheRenderBatch();
+    public void render() {
+        for (RenderBatch batch : batches) {
+            batch.render();
         }
     }
 }

@@ -1,43 +1,37 @@
 package Laevis;
 
+import components.Component;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class GameObject {
 
-    private static int ID_Counter=0;
-    private int UID=-1;
+    private static int ID_COUNTER = 0;
+    private int uid = -1;
 
-    private String Name;
-    private List<Component> Components;
-    public Transform Transform;
+    private String name;
+    private List<Component> components;
+    public Transform transform;
     private int zIndex;
 
-    public GameObject(String Name) {
-        this.Name = Name;
-        this.Components = new ArrayList<>();
-        this.Transform = new Transform();
-        this.zIndex=0;
+    public GameObject(String name, Transform transform, int zIndex) {
+        this.name = name;
+        this.zIndex = zIndex;
+        this.components = new ArrayList<>();
+        this.transform = transform;
 
-        this.UID=ID_Counter++;
+        this.uid = ID_COUNTER++;
     }
 
-    public GameObject(String Name, Transform Transform,int zIndex) {
-        this.Name = Name;
-        this.Components = new ArrayList<>();
-        this.Transform = Transform;
-        this.zIndex=zIndex;
-    }
-
-    public <T extends Component> T GetComponent(Class<T> ComponentClass) {
-        for (Component Component : Components) {
-            if (ComponentClass.isAssignableFrom(Component.getClass())) {
+    public <T extends Component> T getComponent(Class<T> componentClass) {
+        for (Component c : components) {
+            if (componentClass.isAssignableFrom(c.getClass())) {
                 try {
-                    return ComponentClass.cast(Component);
-                }
-                catch (ClassCastException e) {
+                    return componentClass.cast(c);
+                } catch (ClassCastException e) {
                     e.printStackTrace();
-                    assert false : "Error: Casting Component.";
+                    assert false : "Error: Casting component.";
                 }
             }
         }
@@ -45,52 +39,53 @@ public class GameObject {
         return null;
     }
 
-    public <T extends Component> void RemoveComponent(Class<T> ComponentClass) {
-        for (int i = 0; i < Components.size(); i++) {
-            Component Component = Components.get(i);
-            if (ComponentClass.isAssignableFrom(Components.getClass())) {
-                Components.remove(i);
+    public <T extends Component> void removeComponent(Class<T> componentClass) {
+        for (int i=0; i < components.size(); i++) {
+            Component c = components.get(i);
+            if (componentClass.isAssignableFrom(c.getClass())) {
+                components.remove(i);
                 return;
             }
         }
     }
 
-    public void AddComponent(Component Component) {
-        Component.generateID();
-        this.Components.add(Component);
-        Component.GameObject = this;
+    public void addComponent(Component c) {
+        c.generateId();
+        this.components.add(c);
+        c.gameObject = this;
     }
 
-    public void UpdateGameObjects(float DeltaTime) {
-        for (int i = 0; i < Components.size(); i++) {
-            Components.get(i).UpdateComponent(DeltaTime);
+    public List<Component> getAllComponents() {
+        return this.components;
+    }
 
+    public void update(float dt) {
+        for (int i=0; i < components.size(); i++) {
+            components.get(i).update(dt);
         }
     }
 
-    public void StartGameObjects() {
-        for (int i = 0; i < Components.size(); i++) {
-            Components.get(i).StartComponent();
+    public void start() {
+        for (int i=0; i < components.size(); i++) {
+            components.get(i).start();
         }
     }
-    public int getzIndex(){
-        return this.zIndex;
-    }
 
-    public void imgui(){
-        for(Component c: Components){
+    public void imgui() {
+        for (Component c : components) {
             c.imgui();
         }
     }
 
-    public static void init(int maxid){
-        ID_Counter=maxid;
-    }
-    public int getUID(){
-        return this.UID;
+    public int zIndex() {
+        return this.zIndex;
     }
 
-    public List<Component>getComponents(){
-        return this.Components;
+    public int uid() {
+        return this.uid;
+    }
+
+    public static void init(int maxId) {
+        ID_COUNTER = maxId;
     }
 }

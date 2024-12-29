@@ -1,69 +1,53 @@
-package Components;
+package components;
 
-import Renderer.Texture;
 import org.joml.Vector2f;
-import org.w3c.dom.Text;
+import Renderer.Texture;
 
 public class Sprite {
-	private Texture Texture=null;
-	private float Width,Height;
 
-	public void setWidth(float width) {
-		Width = width;
-	}
+    private float width, height;
 
-	public void setHeight(float height) {
-		Height = height;
-	}
+    private Texture texture = null;
+    private Vector2f[] texCoords = {
+                new Vector2f(1, 1),
+                new Vector2f(1, 0),
+                new Vector2f(0, 0),
+                new Vector2f(0, 1)
+        };
 
-	public float getWidth() {
-		return Width;
-	}
+    public Texture getTexture() {
+        return this.texture;
+    }
 
-	public float getHeight() {
-		return Height;
-	}
-	public int getTexId(){
-		return Texture==null ? -1 : Texture.getTextureID();
-	}
+    public Vector2f[] getTexCoords() {
+        return this.texCoords;
+    }
 
-	private Vector2f[] TextureCoordinates={
-			new Vector2f(1,1),
-			new Vector2f(1,0),
-			new Vector2f(0,0),
-			new Vector2f(0,1)
-	};
+    public float getWidth() {
+        return width;
+    }
 
+    public void setWidth(float width) {
+        this.width = width;
+    }
 
-/*
-	public Sprite(Texture Texture) {
-		this.Texture = Texture;
-		Vector2f[] TextureCoordinatesArray = {
-			new Vector2f(1, 1),
-			new Vector2f(1, 0),
-			new Vector2f(0, 0),
-			new Vector2f(0, 1)
-		};
-		this.TextureCoordinates = TextureCoordinatesArray;
-	}*/
-//
-//	public Sprite(Texture Texture, Vector2f[] TextureCoordinates) {
-//		this.Texture = Texture;
-//		this.TextureCoordinates = TextureCoordinates;
-//	}
+    public float getHeight() {
+        return height;
+    }
 
-	public Texture GetTexture() {
-		return this.Texture;
-	}
+    public void setHeight(float height) {
+        this.height = height;
+    }
 
-	public Vector2f[] GetTextureCoordinates() {
-		return this.TextureCoordinates;
-	}
-	public void setTexture(Texture text){
-		this.Texture=text;
-	}
-	public void setTextCoords(Vector2f[] textCoords){
-		this.TextureCoordinates=textCoords;
+    public void setTexture(Texture tex) {
+        this.texture = tex;
+    }
 
-	}
+    public void setTexCoords(Vector2f[] texCoords) {
+        this.texCoords = texCoords;
+    }
+
+    public int getTexId() {
+        return texture == null ? -1 : texture.getId();
+    }
 }

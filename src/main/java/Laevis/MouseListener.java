@@ -1,125 +1,118 @@
 package Laevis;
 
 import org.joml.Vector4f;
-import org.lwjgl.*;
-import org.lwjgl.glfw.*;
-import org.lwjgl.opengl.*;
-import org.lwjgl.system.*;
 
-import java.nio.*;
-
-import static org.lwjgl.glfw.Callbacks.*;
-import static org.lwjgl.glfw.GLFW.*;
-import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.system.MemoryStack.*;
-import static org.lwjgl.system.MemoryUtil.*;
+import static org.lwjgl.glfw.GLFW.GLFW_PRESS;
+import static org.lwjgl.glfw.GLFW.GLFW_RELEASE;
 
 public class MouseListener {
-    private static MouseListener MouseInstance;
-    private double ScrollX, ScrollY;
-    private double XPosition, YPosition, LastX, LastY;
-    private boolean MouseButtonPressed[] = new boolean[3];
+    private static MouseListener instance;
+    private double scrollX, scrollY;
+    private double xPos, yPos, lastY, lastX;
+    private boolean mouseButtonPressed[] = new boolean[9];
     private boolean isDragging;
 
     private MouseListener() {
-        this.ScrollX = 0.0;
-        this.ScrollY = 0.0;
-        this.XPosition = 0.0;
-        this.YPosition = 0.0;
-        this.LastX = 0.0;
-        this.LastY = 0.0;
+        this.scrollX = 0.0;
+        this.scrollY = 0.0;
+        this.xPos = 0.0;
+        this.yPos = 0.0;
+        this.lastX = 0.0;
+        this.lastY = 0.0;
     }
 
-    public static MouseListener Get() {
-        if (MouseListener.MouseInstance == null) {
-            MouseListener.MouseInstance = new MouseListener();
+    public static MouseListener get() {
+        if (MouseListener.instance == null) {
+            MouseListener.instance = new MouseListener();
         }
-        return MouseListener.MouseInstance;
+
+        return MouseListener.instance;
     }
 
-    public static void MousePositionCallback(long window, double XPosition, double YPosition) {
-        Get().LastX = Get().XPosition;
-        Get().LastY = Get().YPosition;
-        Get().XPosition = XPosition;
-        Get().YPosition = YPosition;
-        Get().isDragging = Get().MouseButtonPressed[0] || Get().MouseButtonPressed[1] || Get().MouseButtonPressed[2];
+    public static void mousePosCallback(long window, double xpos, double ypos) {
+        get().lastX = get().xPos;
+        get().lastY = get().yPos;
+        get().xPos = xpos;
+        get().yPos = ypos;
+        get().isDragging = get().mouseButtonPressed[0] || get().mouseButtonPressed[1] || get().mouseButtonPressed[2];
     }
 
-    public static void MouseButtonCallback(long window, int button, int action, int mods) {
+    public static void mouseButtonCallback(long window, int button, int action, int mods) {
         if (action == GLFW_PRESS) {
-            if (button < Get().MouseButtonPressed.length) {
-                Get().MouseButtonPressed[button] = true;
+            if (button < get().mouseButtonPressed.length) {
+                get().mouseButtonPressed[button] = true;
             }
         } else if (action == GLFW_RELEASE) {
-            if (button < Get().MouseButtonPressed.length) {
-                Get().MouseButtonPressed[button] = false;
-                Get().isDragging = false;
+            if (button < get().mouseButtonPressed.length) {
+                get().mouseButtonPressed[button] = false;
+                get().isDragging = false;
             }
         }
     }
 
-    public static void MouseScrollCallback(long window, double XOffset, double YOffset) {
-        Get().ScrollX = XOffset;
-        Get().ScrollY = YOffset;
+    public static void mouseScrollCallback(long window, double xOffset, double yOffset) {
+        get().scrollX = xOffset;
+        get().scrollY = yOffset;
     }
 
-    public static void EndFrame() {
-        Get().ScrollX = 0;
-        Get().ScrollY = 0;
-        Get().LastX = Get().XPosition;
-        Get().LastY = Get().YPosition;
+    public static void endFrame() {
+        get().scrollX = 0;
+        get().scrollY = 0;
+        get().lastX = get().xPos;
+        get().lastY = get().yPos;
     }
 
-    public static float GetX() {
-        return (float)Get().XPosition;
+    public static float getX() {
+        return (float)get().xPos;
     }
 
-    public static float GetY() {
-        return (float)Get().YPosition;
+    public static float getY() {
+        return (float)get().yPos;
     }
 
-    public static float getOrthoX(){
-    float currentX=GetX();
-    currentX=(currentX/(float)Window.getWidth())*2.0f - 1.0f;
+    public static float getOrthoX() {
+        float currentX = getX();
+        currentX = (currentX / (float)Window.getWidth()) * 2.0f - 1.0f;
+        Vector4f tmp = new Vector4f(currentX, 0, 0, 1);
+        tmp.mul(Window.getScene().camera().getInverseProjection()).mul(Window.getScene().camera().getInverseView());
+        currentX = tmp.x;
 
-    Vector4f tmp=new Vector4f(0,0,0,1);
-    tmp.mul(Window.getScene().Camera().GetInverseProjection().mul(Window.getScene().Camera().GetInverseView()));
-    currentX=tmp.x;
-    return currentX;
+        return currentX;
     }
 
-    public static float getOrthoY(){
-    float currentY=Window.getHeight()-GetY();
-    currentY=(currentY/(float)Window.getHeight())*2.0f -1.0f;
-    Vector4f tmp=new Vector4f(0,0,0,1);
-    tmp.mul(Window.getScene().Camera().GetInverseProjection().mul(Window.getScene().Camera().GetInverseView()));
-    currentY=tmp.y;
-    return -1;
+    public static float getOrthoY() {
+        float currentY = Window.getHeight() - getY();
+        currentY = (currentY / (float)Window.getHeight()) * 2.0f - 1.0f;
+        Vector4f tmp = new Vector4f(0, currentY, 0, 1);
+        tmp.mul(Window.getScene().camera().getInverseProjection()).mul(Window.getScene().camera().getInverseView());
+        currentY = tmp.y;
+
+        return currentY;
     }
 
-    public static float GetDx() {
-        return (float)(Get().LastX - Get().XPosition);
+    public static float getDx() {
+        return (float)(get().lastX - get().xPos);
     }
 
-    public static float GetDy() {
-        return (float)(Get().LastY - Get().YPosition);
+    public static float getDy() {
+        return (float)(get().lastY - get().yPos);
     }
 
-    public static float GetScrollX() {
-        return (float)Get().ScrollX;
+    public static float getScrollX() {
+        return (float)get().scrollX;
     }
 
-    public static float GetScrollY() {
-        return (float)Get().ScrollY;
+    public static float getScrollY() {
+        return (float)get().scrollY;
     }
 
     public static boolean isDragging() {
-        return Get().isDragging;
+        return get().isDragging;
     }
 
-    public static boolean MouseButtonDown(int button) {
-        if (button < Get().MouseButtonPressed.length) {
-            return Get().MouseButtonPressed[button];
+    public static boolean mouseButtonDown(int button) {
+        if (button < get().mouseButtonPressed.length) {
+            return get().mouseButtonPressed[button];
         } else {
             return false;
         }

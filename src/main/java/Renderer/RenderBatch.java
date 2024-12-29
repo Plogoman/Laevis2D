@@ -1,178 +1,178 @@
 package Renderer;
 
-import Components.SpriteRenderer;
+import components.SpriteRenderer;
 import Laevis.Window;
-import LaevisUtilities.AssetPool;
-import kotlin.jvm.internal.PropertyReference0Impl;
-import kotlin.time.ComparableTimeMark;
-import org.jetbrains.annotations.NotNull;
 import org.joml.Vector2f;
 import org.joml.Vector4f;
+import LaevisUtilities.AssetPool;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
-import static org.lwjgl.opengl.GL33.*;
+import static org.lwjgl.opengl.GL15.*;
+import static org.lwjgl.opengl.GL20.glDisableVertexAttribArray;
+import static org.lwjgl.opengl.GL20.glEnableVertexAttribArray;
+import static org.lwjgl.opengl.GL20C.glVertexAttribPointer;
+import static org.lwjgl.opengl.GL30.glBindVertexArray;
+import static org.lwjgl.opengl.GL30.glGenVertexArrays;
 
 public class RenderBatch implements Comparable<RenderBatch> {
-    /* Vertex
-     * Position          Color                           Texture Coordinates         Texture ID
-     * float, float,     float, float, float, float,     float, float,               float
-    */
-    private final int POSITION_SIZE = 2;
+    // Vertex
+    // ======
+    // Pos               Color                         tex coords     tex id
+    // float, float,     float, float, float, float    float, float   float
+    private final int POS_SIZE = 2;
     private final int COLOR_SIZE = 4;
-    private final int TEXTURE_COORDINATES_SIZE = 2;
-    private final int TEXTURE_ID_SIZE = 1;
+    private final int TEX_COORDS_SIZE = 2;
+    private final int TEX_ID_SIZE = 1;
 
-    private final int POSITION_OFFSET = 0;
-    private final int COLOR_OFFSET = POSITION_OFFSET + POSITION_SIZE * Float.BYTES;
-    private final int TEXTURE_COORDINATES_OFFSET = COLOR_OFFSET + COLOR_SIZE * Float.BYTES;
-    private final int TEXTURE_ID_OFFSET = TEXTURE_COORDINATES_OFFSET + TEXTURE_COORDINATES_SIZE * Float.BYTES;
-    private final int VERTEX_SIZE = POSITION_SIZE + COLOR_SIZE + TEXTURE_COORDINATES_SIZE + TEXTURE_ID_SIZE;
+    private final int POS_OFFSET = 0;
+    private final int COLOR_OFFSET = POS_OFFSET + POS_SIZE * Float.BYTES;
+    private final int TEX_COORDS_OFFSET = COLOR_OFFSET + COLOR_SIZE * Float.BYTES;
+    private final int TEX_ID_OFFSET = TEX_COORDS_OFFSET + TEX_COORDS_SIZE * Float.BYTES;
+    private final int VERTEX_SIZE = 9;
     private final int VERTEX_SIZE_BYTES = VERTEX_SIZE * Float.BYTES;
 
-    private SpriteRenderer[] Sprites;
-    private int NumberOfSprites;
-    private boolean HasRoom;
-    private float[] Vertices;
-    private int[] TextureSlots = { 0, 1, 2, 3, 4, 5, 6, 7 };
+    private SpriteRenderer[] sprites;
+    private int numSprites;
+    private boolean hasRoom;
+    private float[] vertices;
+    private int[] texSlots = {0, 1, 2, 3, 4, 5, 6, 7};
 
-    private List<Texture> Textures;
-    private int VAO_ID, VBO_ID;
-    private int MaximumBatchSize;
-    private Shader Shader;
+    private List<Texture> textures;
+    private int vaoID, vboID;
+    private int maxBatchSize;
+    private Shader shader;
     private int zIndex;
 
-    public RenderBatch(int MaximumBatchSize, int zIndex) {
-        this.zIndex=zIndex;
-        Shader = AssetPool.GetShader("Assets/Shaders/default.glsl");
-        this.Sprites = new SpriteRenderer[MaximumBatchSize];
-        this.MaximumBatchSize = MaximumBatchSize;
+    public RenderBatch(int maxBatchSize, int zIndex) {
+        this.zIndex = zIndex;
+        shader = AssetPool.getShader("assets/shaders/default.glsl");
+        this.sprites = new SpriteRenderer[maxBatchSize];
+        this.maxBatchSize = maxBatchSize;
 
-        //4 Vertices Quads
-        Vertices = new float[MaximumBatchSize * 4 * VERTEX_SIZE];
+        // 4 vertices quads
+        vertices = new float[maxBatchSize * 4 * VERTEX_SIZE];
 
-        this.NumberOfSprites = 0;
-        this.HasRoom = true;
-        this.Textures = new ArrayList<>();
+        this.numSprites = 0;
+        this.hasRoom = true;
+        this.textures = new ArrayList<>();
     }
 
-    public void StartBatchRenderer() {
-        VAO_ID = glGenVertexArrays();
-        glBindVertexArray(VAO_ID);
+    public void start() {
+        // Generate and bind a Vertex Array Object
+        vaoID = glGenVertexArrays();
+        glBindVertexArray(vaoID);
 
-        // Allocate Space
-        VBO_ID = glGenBuffers();
-        glBindBuffer(GL_ARRAY_BUFFER, VBO_ID);
-        glBufferData(GL_ARRAY_BUFFER, (long)Vertices.length * Float.BYTES, GL_DYNAMIC_DRAW);
+        // Allocate space for vertices
+        vboID = glGenBuffers();
+        glBindBuffer(GL_ARRAY_BUFFER, vboID);
+        glBufferData(GL_ARRAY_BUFFER, vertices.length * Float.BYTES, GL_DYNAMIC_DRAW);
 
-        //Create & Upload Buffer
-        int EBO_ID = glGenBuffers();
-        int[] Indices = GenerateIndices();
-        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO_ID);
-        glBufferData(GL_ELEMENT_ARRAY_BUFFER, Indices, GL_STATIC_DRAW);
+        // Create and upload indices buffer
+        int eboID = glGenBuffers();
+        int[] indices = generateIndices();
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, eboID);
+        glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices, GL_STATIC_DRAW);
 
-        //Enable the Buffer Attribute Pointers
-        glVertexAttribPointer(0, POSITION_SIZE, GL_FLOAT, false, VERTEX_SIZE_BYTES, POSITION_OFFSET);
+        // Enable the buffer attribute pointers
+        glVertexAttribPointer(0, POS_SIZE, GL_FLOAT, false, VERTEX_SIZE_BYTES, POS_OFFSET);
         glEnableVertexAttribArray(0);
 
         glVertexAttribPointer(1, COLOR_SIZE, GL_FLOAT, false, VERTEX_SIZE_BYTES, COLOR_OFFSET);
         glEnableVertexAttribArray(1);
 
-        glVertexAttribPointer(2, TEXTURE_COORDINATES_SIZE, GL_FLOAT, false, VERTEX_SIZE_BYTES, TEXTURE_COORDINATES_OFFSET);
+        glVertexAttribPointer(2, TEX_COORDS_SIZE, GL_FLOAT, false, VERTEX_SIZE_BYTES, TEX_COORDS_OFFSET);
         glEnableVertexAttribArray(2);
 
-        glVertexAttribPointer(3, TEXTURE_ID_SIZE, GL_FLOAT, false, VERTEX_SIZE_BYTES, TEXTURE_ID_OFFSET);
+        glVertexAttribPointer(3, TEX_ID_SIZE, GL_FLOAT, false, VERTEX_SIZE_BYTES, TEX_ID_OFFSET);
         glEnableVertexAttribArray(3);
     }
 
-    public void AddSprite(SpriteRenderer spriteRenderer) {
-        // Get Index and Render Object
-        int Index = this.NumberOfSprites;
-        this.Sprites[Index] = spriteRenderer;
-        this.NumberOfSprites++;
+    public void addSprite(SpriteRenderer spr) {
+        // Get index and add renderObject
+        int index = this.numSprites;
+        this.sprites[index] = spr;
+        this.numSprites++;
 
-        if (spriteRenderer.GetTexture() != null) {
-            if (!Textures.contains(spriteRenderer.GetTexture())) {
-                Textures.add(spriteRenderer.GetTexture());
+        if (spr.getTexture() != null) {
+            if (!textures.contains(spr.getTexture())) {
+                textures.add(spr.getTexture());
             }
         }
 
-        // Add to Local Vertices Array
-        LoadVertexProperties(Index);
+        // Add properties to local vertices array
+        loadVertexProperties(index);
 
-        if (NumberOfSprites >= this.MaximumBatchSize) {
-            this.HasRoom = false;
+        if (numSprites >= this.maxBatchSize) {
+            this.hasRoom = false;
         }
     }
 
-    public void RenderTheRenderBatch() {
-        boolean rebufferdata=false;
-        for(int i=0;i<NumberOfSprites;i++){
-            SpriteRenderer spr=Sprites[i];
-            if(spr.isDirty()){
-                LoadVertexProperties(i);
+    public void render() {
+        boolean rebufferData = false;
+        for (int i=0; i < numSprites; i++) {
+            SpriteRenderer spr = sprites[i];
+            if (spr.isDirty()) {
+                loadVertexProperties(i);
                 spr.setClean();
-                rebufferdata=true;
+                rebufferData = true;
             }
         }
-        if(rebufferdata) {
-            //rebuffer the data if we have a dirty flag
-            glBindBuffer(GL_ARRAY_BUFFER, VBO_ID);
-            glBufferSubData(GL_ARRAY_BUFFER, 0, Vertices);
+        if (rebufferData) {
+            glBindBuffer(GL_ARRAY_BUFFER, vboID);
+            glBufferSubData(GL_ARRAY_BUFFER, 0, vertices);
         }
-        // Use Shader
-        Shader.UseShader();
-        Shader.UploadMatrix4f("UniformProjectionMatrix", Window.GetScene().Camera().GetProjectionMatrix());
-        Shader.UploadMatrix4f("UniformViewMatrix", Window.GetScene().Camera().GetViewMatrix());
-        for (int i = 0; i < Textures.size(); i++) {
-            glActiveTexture(GL_TEXTURE0 + i + 1);
-            Textures.get(i).BindTexture();
-        }
-        Shader.UploadIntArray("UniformTextures", TextureSlots);
 
-        glBindVertexArray(VAO_ID);
+        // Use shader
+        shader.use();
+        shader.uploadMat4f("uProjection", Window.getScene().camera().getProjectionMatrix());
+        shader.uploadMat4f("uView", Window.getScene().camera().getViewMatrix());
+        for (int i=0; i < textures.size(); i++) {
+            glActiveTexture(GL_TEXTURE0 + i + 1);
+            textures.get(i).bind();
+        }
+        shader.uploadIntArray("uTextures", texSlots);
+
+        glBindVertexArray(vaoID);
         glEnableVertexAttribArray(0);
         glEnableVertexAttribArray(1);
 
-        glDrawElements(GL_TRIANGLES, this.NumberOfSprites * 6, GL_UNSIGNED_INT, 0);
+        glDrawElements(GL_TRIANGLES, this.numSprites * 6, GL_UNSIGNED_INT, 0);
 
         glDisableVertexAttribArray(0);
         glDisableVertexAttribArray(1);
         glBindVertexArray(0);
 
-        for (int i = 0; i < Textures.size(); i++) {
-            Textures.get(i).UnbindTexture();
+        for (int i=0; i < textures.size(); i++) {
+            textures.get(i).unbind();
         }
-
-        Shader.DetachShader();
+        shader.detach();
     }
 
-    private void LoadVertexProperties(int Index) {
-        SpriteRenderer Sprite = this.Sprites[Index];
+    private void loadVertexProperties(int index) {
+        SpriteRenderer sprite = this.sprites[index];
 
-        // Find Offset in Array
-        int Offset = Index * 4 * VERTEX_SIZE;
+        // Find offset within array (4 vertices per sprite)
+        int offset = index * 4 * VERTEX_SIZE;
 
-        Vector4f Color = Sprite.GetColor();
-        Vector2f[] TextureCoordinates = Sprite.GetTextureCoordinates();
+        Vector4f color = sprite.getColor();
+        Vector2f[] texCoords = sprite.getTexCoords();
 
-        int TextureID = 0;
-        if (Sprite.GetTexture() != null) {
-            for (int i = 0; i < Textures.size(); i++) {
-                if (Textures.get(i) == Sprite.GetTexture()) {
-                    TextureID = i + 1;
+        int texId = 0;
+        if (sprite.getTexture() != null) {
+            for (int i = 0; i < textures.size(); i++) {
+                if (textures.get(i) == sprite.getTexture()) {
+                    texId = i + 1;
                     break;
                 }
             }
         }
 
-        // Add Vertices with their Properties
+        // Add vertices with the appropriate properties
         float xAdd = 1.0f;
         float yAdd = 1.0f;
-
-        for (int i = 0; i < 4; i++) {
+        for (int i=0; i < 4; i++) {
             if (i == 1) {
                 yAdd = 0.0f;
             } else if (i == 2) {
@@ -181,69 +181,71 @@ public class RenderBatch implements Comparable<RenderBatch> {
                 yAdd = 1.0f;
             }
 
-            // Load Position
-            Vertices[Offset] = Sprite.GameObject.Transform.Position.x + (xAdd * Sprite.GameObject.Transform.Scale.x);
-            Vertices[Offset + 1] = Sprite.GameObject.Transform.Position.y + (yAdd * Sprite.GameObject.Transform.Scale.y);
+            // Load position
+            vertices[offset] = sprite.gameObject.transform.position.x + (xAdd * sprite.gameObject.transform.scale.x);
+            vertices[offset + 1] = sprite.gameObject.transform.position.y + (yAdd * sprite.gameObject.transform.scale.y);
 
-            //Load Color
-            Vertices[Offset + 2] = Color.x;
-            Vertices[Offset + 3] = Color.y;
-            Vertices[Offset + 4] = Color.z;
-            Vertices[Offset + 5] = Color.w;
+            // Load color
+            vertices[offset + 2] = color.x;
+            vertices[offset + 3] = color.y;
+            vertices[offset + 4] = color.z;
+            vertices[offset + 5] = color.w;
 
-            //Load Texture Coordinates
-            Vertices[Offset + 6] = TextureCoordinates[i].x;
-            Vertices[Offset + 7] = TextureCoordinates[i].y;
+            // Load texture coordinates
+            vertices[offset + 6] = texCoords[i].x;
+            vertices[offset + 7] = texCoords[i].y;
 
-            //Load Texture ID
-            Vertices[Offset + 8] = TextureID;
+            // Load texture id
+            vertices[offset + 8] = texId;
 
-            Offset += VERTEX_SIZE;
+            offset += VERTEX_SIZE;
         }
     }
 
-    private int[] GenerateIndices() {
-        // 6 Indices per Quad
-        int[] Elements = new int[6 * MaximumBatchSize];
-        for (int i = 0; i < MaximumBatchSize; i++) {
-            LoadElementIndices(Elements, i);
+    private int[] generateIndices() {
+        // 6 indices per quad (3 per triangle)
+        int[] elements = new int[6 * maxBatchSize];
+        for (int i=0; i < maxBatchSize; i++) {
+            loadElementIndices(elements, i);
         }
 
-        return Elements;
+        return elements;
     }
 
-    private void LoadElementIndices(int[] Elements, int Index) {
-        int OffsetArrayIndex = 6 * Index;
-        int Offset = 4 * Index;
+    private void loadElementIndices(int[] elements, int index) {
+        int offsetArrayIndex = 6 * index;
+        int offset = 4 * index;
 
-        //Triangle 1
-        Elements[OffsetArrayIndex] = Offset + 3;
-        Elements[OffsetArrayIndex + 1] = Offset + 2;
-        Elements[OffsetArrayIndex + 2] = Offset;
+        // 3, 2, 0, 0, 2, 1        7, 6, 4, 4, 6, 5
+        // Triangle 1
+        elements[offsetArrayIndex] = offset + 3;
+        elements[offsetArrayIndex + 1] = offset + 2;
+        elements[offsetArrayIndex + 2] = offset + 0;
 
-        //Triangle 2
-        Elements[OffsetArrayIndex + 3] = Offset;
-        Elements[OffsetArrayIndex + 4] = Offset + 2;
-        Elements[OffsetArrayIndex + 5] = Offset + 1;
+        // Triangle 2
+        elements[offsetArrayIndex + 3] = offset + 0;
+        elements[offsetArrayIndex + 4] = offset + 2;
+        elements[offsetArrayIndex + 5] = offset + 1;
     }
 
-    public boolean GetHasRoom() {
-        return this.HasRoom;
+    public boolean hasRoom() {
+        return this.hasRoom;
     }
 
-    public boolean GetHasTextureRoom() {
-        return this.Textures.size() < 8;
+    public boolean hasTextureRoom() {
+        return this.textures.size() < 8;
     }
 
-    public boolean GetHasTexture(Texture texture) {
-        return this.Textures.contains(texture);
+    public boolean hasTexture(Texture tex) {
+        return this.textures.contains(tex);
     }
-    public int getzIndex(){
+
+    public int zIndex() {
         return this.zIndex;
     }
 
     @Override
     public int compareTo(RenderBatch o) {
-        return Integer.compare(this.zIndex,o.zIndex);
+        return Integer.compare(this.zIndex, o.zIndex());
     }
 }
