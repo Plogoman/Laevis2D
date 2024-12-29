@@ -3,46 +3,42 @@ package Laevis;
 import org.joml.Vector2f;
 
 public class Transform {
-    public Vector2f Position;
-    public Vector2f Scale;
 
-    public Vector2f Empty = new Vector2f();
+    public Vector2f position;
+    public Vector2f scale;
 
     public Transform() {
-        this.Position = Empty;
-        this.Scale = Empty;
+        init(new Vector2f(), new Vector2f());
     }
 
-    public Transform(Vector2f Position) {
-        InitTransform(Position, Empty);
+    public Transform(Vector2f position) {
+        init(position, new Vector2f());
     }
 
-    public Transform(Vector2f Position, Vector2f Scale) {
-        InitTransform(Position, Scale);
+    public Transform(Vector2f position, Vector2f scale) {
+        init(position, scale);
     }
 
-    public void InitTransform(Vector2f Position, Vector2f Scale) {
-        this.Position = Position;
-        this.Scale = Scale;
-    }
-    public Transform copy(){
-        return new Transform(new Vector2f(this.Position),new Vector2f(this.Scale));
+    public void init(Vector2f position, Vector2f scale) {
+        this.position = position;
+        this.scale = scale;
     }
 
-    public  void copy(Transform to){    //it copies to the  new transform object we pass in
-        to.Position.set(this.Position);
-        to.Scale.set(this.Scale);
+    public Transform copy() {
+        return new Transform(new Vector2f(this.position), new Vector2f(this.scale));
+    }
 
+    public void copy(Transform to) {
+        to.position.set(this.position);
+        to.scale.set(this.scale);
     }
 
     @Override
-    public boolean equals(Object O){
+    public boolean equals(Object o) {
+        if (o == null) return false;
+        if (!(o instanceof Transform)) return false;
 
-    if(O==null) return false;
-
-    if(!(O instanceof Transform )) return false;
-
-    Transform t=(Transform) O;
-    return t.Position.equals(this.Position) && t.Scale.equals(this.Scale);
+        Transform t = (Transform)o;
+        return t.position.equals(this.position) && t.scale.equals(this.scale);
     }
 }

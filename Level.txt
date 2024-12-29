@@ -1,285 +1,159 @@
 [
   {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
+    "uid": 0,
+    "name": "Object 1",
+    "components": [
       {
-        "type": "Components.SpriteRenderer",
+        "type": "components.SpriteRenderer",
         "properties": {
-          "Color": {
+          "color": {
+            "x": 0.070295855,
+            "y": 0.1267808,
+            "z": 0.25384617,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 0.0,
+            "height": 0.0,
+            "texCoords": [
+              {
+                "x": 1.0,
+                "y": 1.0
+              },
+              {
+                "x": 1.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 0.0,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 0
+        }
+      },
+      {
+        "type": "components.Rigidbody",
+        "properties": {
+          "colliderType": 0,
+          "friction": 0.8,
+          "velocity": {
+            "x": 0.0,
+            "y": 0.5,
+            "z": 0.0
+          },
+          "uid": 1
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 200.0,
+        "y": 100.0
+      },
+      "scale": {
+        "x": 256.0,
+        "y": 256.0
+      }
+    },
+    "zIndex": 2
+  },
+  {
+    "uid": 1,
+    "name": "Object 2",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
             "w": 1.0
           },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 1,
-              "Width": 224,
-              "Height": 32
+          "sprite": {
+            "width": 0.0,
+            "height": 0.0,
+            "texture": {
+              "filepath": "assets/images/blendImage2.png",
+              "texID": 3,
+              "width": 256,
+              "height": 256
             },
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
+            "texCoords": [
               {
-                "x": 0.14285715,
+                "x": 1.0,
                 "y": 1.0
               },
               {
-                "x": 0.14285715,
-                "y": 0.5
+                "x": 1.0,
+                "y": 0.0
               },
               {
-                "x": 0.071428575,
-                "y": 0.5
+                "x": 0.0,
+                "y": 0.0
               },
               {
-                "x": 0.071428575,
+                "x": 0.0,
                 "y": 1.0
               }
             ]
           },
-          "U_ID": 0
-        }
-      },
-      {
-        "type": "Components.TestComponent",
-        "properties": {
-          "collidertype": 0,
-          "friction": 0.0,
-          "Velcoity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "U_ID": 1
+          "uid": 2
         }
       }
     ],
-    "Transform": {
-      "Position": {
-        "x": 2504.647,
+    "transform": {
+      "position": {
+        "x": 400.0,
         "y": 100.0
       },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
+      "scale": {
+        "x": 256.0,
+        "y": 256.0
       }
     },
-    "zIndex": -1
+    "zIndex": 3
   },
   {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
+    "uid": 2,
+    "name": "Sprite_Object_Gen",
+    "components": [
       {
-        "type": "Components.SpriteRenderer",
+        "type": "components.SpriteRenderer",
         "properties": {
-          "Color": {
+          "color": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
             "w": 1.0
           },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 1,
-              "Width": 224,
-              "Height": 32
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
             },
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
+            "texCoords": [
               {
                 "x": 0.14285715,
                 "y": 1.0
               },
               {
                 "x": 0.14285715,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 2
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": 1918.3328,
-        "y": 100.0
-      },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 1,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 3
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": 150.88803,
-        "y": 100.0
-      },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 1,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 4
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": 170.31601,
-        "y": 100.0
-      },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
+                "y": 0.9166667
               },
               {
                 "x": 0.0,
-                "y": 0.0
+                "y": 0.9166667
               },
               {
                 "x": 0.0,
@@ -287,652 +161,56 @@
               }
             ]
           },
-          "U_ID": 5
-        }
-      },
-      {
-        "type": "Components.TestComponent",
-        "properties": {
-          "collidertype": 0,
-          "friction": 0.0,
-          "Velcoity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "U_ID": 6
+          "uid": 3
         }
       }
     ],
-    "Transform": {
-      "Position": {
-        "x": 100.0,
-        "y": 100.0
+    "transform": {
+      "position": {
+        "x": 426.44446,
+        "y": 501.13916
       },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 7
-        }
-      },
-      {
-        "type": "Components.TestComponent",
-        "properties": {
-          "collidertype": 0,
-          "friction": 0.0,
-          "Velcoity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "U_ID": 8
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": 100.0,
-        "y": 100.0
-      },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 9
-        }
-      },
-      {
-        "type": "Components.TestComponent",
-        "properties": {
-          "collidertype": 0,
-          "friction": 0.0,
-          "Velcoity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "U_ID": 10
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": 100.0,
-        "y": 100.0
-      },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 11
-        }
-      },
-      {
-        "type": "Components.TestComponent",
-        "properties": {
-          "collidertype": 0,
-          "friction": 0.0,
-          "Velcoity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "U_ID": 12
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": 100.0,
-        "y": 100.0
-      },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 13
-        }
-      },
-      {
-        "type": "Components.TestComponent",
-        "properties": {
-          "collidertype": 0,
-          "friction": 0.0,
-          "Velcoity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "U_ID": 14
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": 100.0,
-        "y": 100.0
-      },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 15
-        }
-      },
-      {
-        "type": "Components.TestComponent",
-        "properties": {
-          "collidertype": 0,
-          "friction": 0.0,
-          "Velcoity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "U_ID": 16
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": 100.0,
-        "y": 100.0
-      },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.35714287,
-                "y": 0.5
-              },
-              {
-                "x": 0.35714287,
-                "y": 0.0
-              },
-              {
-                "x": 0.2857143,
-                "y": 0.0
-              },
-              {
-                "x": 0.2857143,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 17
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -9.2105536E8,
-        "y": -17.0
-      },
-      "Scale": {
+      "scale": {
         "x": 64.0,
         "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
       }
     },
     "zIndex": 0
   },
   {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
+    "uid": 3,
+    "name": "Sprite_Object_Gen",
+    "components": [
       {
-        "type": "Components.SpriteRenderer",
+        "type": "components.SpriteRenderer",
         "properties": {
-          "Color": {
+          "color": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
             "w": 1.0
           },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
             },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 18
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -9.3103936E8,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.35714287,
-                "y": 1.0
-              },
-              {
-                "x": 0.35714287,
-                "y": 0.5
-              },
-              {
-                "x": 0.2857143,
-                "y": 0.5
-              },
-              {
-                "x": 0.2857143,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 19
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -9.3551936E8,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
+            "texCoords": [
               {
                 "x": 0.2857143,
                 "y": 1.0
               },
               {
                 "x": 0.2857143,
-                "y": 0.5
-              },
-              {
-                "x": 0.21428572,
-                "y": 0.5
-              },
-              {
-                "x": 0.21428572,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 20
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -9.3795136E8,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.21428572,
-                "y": 1.0
-              },
-              {
-                "x": 0.21428572,
-                "y": 0.5
+                "y": 0.9166667
               },
               {
                 "x": 0.14285715,
-                "y": 0.5
+                "y": 0.9166667
               },
               {
                 "x": 0.14285715,
@@ -940,1523 +218,284 @@
               }
             ]
           },
-          "U_ID": 21
+          "uid": 4
         }
       }
     ],
-    "Transform": {
-      "Position": {
-        "x": -9.3948736E8,
-        "y": -17.0
+    "transform": {
+      "position": {
+        "x": 1.555542,
+        "y": 275.6681
       },
-      "Scale": {
+      "scale": {
         "x": 64.0,
         "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
       }
     },
     "zIndex": 0
   },
   {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
+    "uid": 4,
+    "name": "Sprite_Object_Gen",
+    "components": [
       {
-        "type": "Components.SpriteRenderer",
+        "type": "components.SpriteRenderer",
         "properties": {
-          "Color": {
+          "color": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
             "w": 1.0
           },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
             },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
+            "texCoords": [
               {
-                "x": 0.64285713,
-                "y": 1.0
+                "x": 0.14285715,
+                "y": 0.75
               },
               {
-                "x": 0.64285713,
-                "y": 0.5
-              },
-              {
-                "x": 0.5714286,
-                "y": 0.5
-              },
-              {
-                "x": 0.5714286,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 22
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1.3442234E9,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
+                "x": 0.14285715,
+                "y": 0.6666667
               },
               {
                 "x": 0.0,
-                "y": 0.0
+                "y": 0.6666667
               },
               {
                 "x": 0.0,
-                "y": 1.0
+                "y": 0.75
               }
             ]
           },
-          "U_ID": 23
-        }
-      },
-      {
-        "type": "Components.TestComponent",
-        "properties": {
-          "collidertype": 0,
-          "friction": 0.0,
-          "Velcoity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "U_ID": 24
+          "uid": 5
         }
       }
     ],
-    "Transform": {
-      "Position": {
-        "x": 100.0,
-        "y": 100.0
+    "transform": {
+      "position": {
+        "x": 638.8889,
+        "y": 388.4036
       },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.78571427,
-                "y": 0.5
-              },
-              {
-                "x": 0.78571427,
-                "y": 0.0
-              },
-              {
-                "x": 0.71428573,
-                "y": 0.0
-              },
-              {
-                "x": 0.71428573,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 25
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -863376.0,
-        "y": -17.0
-      },
-      "Scale": {
+      "scale": {
         "x": 64.0,
         "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
       }
     },
     "zIndex": 0
   },
   {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
+    "uid": 5,
+    "name": "Sprite_Object_Gen",
+    "components": [
       {
-        "type": "Components.SpriteRenderer",
+        "type": "components.SpriteRenderer",
         "properties": {
-          "Color": {
+          "color": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
             "w": 1.0
           },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
             },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
+            "texCoords": [
               {
-                "x": 0.78571427,
+                "x": 0.14285715,
+                "y": 0.5833333
+              },
+              {
+                "x": 0.14285715,
                 "y": 0.5
               },
               {
-                "x": 0.78571427,
-                "y": 0.0
-              },
-              {
-                "x": 0.71428573,
-                "y": 0.0
-              },
-              {
-                "x": 0.71428573,
+                "x": 0.0,
                 "y": 0.5
+              },
+              {
+                "x": 0.0,
+                "y": 0.5833333
               }
             ]
           },
-          "U_ID": 26
+          "uid": 6
         }
       }
     ],
-    "Transform": {
-      "Position": {
-        "x": -1759376.0,
-        "y": -17.0
+    "transform": {
+      "position": {
+        "x": 449.11108,
+        "y": 631.9284
       },
-      "Scale": {
+      "scale": {
         "x": 64.0,
         "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
       }
     },
     "zIndex": 0
   },
   {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
+    "uid": 6,
+    "name": "Sprite_Object_Gen",
+    "components": [
       {
-        "type": "Components.SpriteRenderer",
+        "type": "components.SpriteRenderer",
         "properties": {
-          "Color": {
+          "color": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
             "w": 1.0
           },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
             },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
+            "texCoords": [
               {
-                "x": 0.78571427,
-                "y": 0.5
+                "x": 0.2857143,
+                "y": 0.6666667
               },
               {
-                "x": 0.78571427,
-                "y": 0.0
+                "x": 0.2857143,
+                "y": 0.5833333
               },
               {
-                "x": 0.71428573,
-                "y": 0.0
+                "x": 0.14285715,
+                "y": 0.5833333
               },
               {
-                "x": 0.71428573,
-                "y": 0.5
+                "x": 0.14285715,
+                "y": 0.6666667
               }
             ]
           },
-          "U_ID": 27
+          "uid": 7
         }
       }
     ],
-    "Transform": {
-      "Position": {
-        "x": -1.1487376E7,
-        "y": -17.0
+    "transform": {
+      "position": {
+        "x": 411.3333,
+        "y": 402.4454
       },
-      "Scale": {
+      "scale": {
         "x": 64.0,
         "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
       }
     },
     "zIndex": 0
   },
   {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
+    "uid": 7,
+    "name": "Sprite_Object_Gen",
+    "components": [
       {
-        "type": "Components.SpriteRenderer",
+        "type": "components.SpriteRenderer",
         "properties": {
-          "Color": {
+          "color": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
             "w": 1.0
           },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
             },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
+            "texCoords": [
               {
-                "x": 0.64285713,
-                "y": 1.0
+                "x": 0.2857143,
+                "y": 0.6666667
               },
               {
-                "x": 0.64285713,
-                "y": 0.5
+                "x": 0.2857143,
+                "y": 0.5833333
               },
               {
-                "x": 0.5714286,
-                "y": 0.5
+                "x": 0.14285715,
+                "y": 0.5833333
               },
               {
-                "x": 0.5714286,
-                "y": 1.0
+                "x": 0.14285715,
+                "y": 0.6666667
               }
             ]
           },
-          "U_ID": 28
+          "uid": 8
         }
       }
     ],
-    "Transform": {
-      "Position": {
-        "x": -1.2255376E7,
-        "y": -17.0
+    "transform": {
+      "position": {
+        "x": 335.33337,
+        "y": 491.91168
       },
-      "Scale": {
+      "scale": {
         "x": 64.0,
         "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
       }
     },
     "zIndex": 0
   },
   {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
+    "uid": 8,
+    "name": "Sprite_Object_Gen",
+    "components": [
       {
-        "type": "Components.SpriteRenderer",
+        "type": "components.SpriteRenderer",
         "properties": {
-          "Color": {
+          "color": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
             "w": 1.0
           },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
             },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.64285713,
-                "y": 1.0
-              },
-              {
-                "x": 0.64285713,
-                "y": 0.5
-              },
-              {
-                "x": 0.5714286,
-                "y": 0.5
-              },
-              {
-                "x": 0.5714286,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 29
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -2.3263376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
+            "texCoords": [
               {
                 "x": 0.85714287,
                 "y": 1.0
               },
               {
                 "x": 0.85714287,
-                "y": 0.5
-              },
-              {
-                "x": 0.78571427,
-                "y": 0.5
-              },
-              {
-                "x": 0.78571427,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 30
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -2.6847376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.85714287,
-                "y": 1.0
-              },
-              {
-                "x": 0.85714287,
-                "y": 0.5
-              },
-              {
-                "x": 0.78571427,
-                "y": 0.5
-              },
-              {
-                "x": 0.78571427,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 31
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -2.8511376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.64285713,
-                "y": 0.5
-              },
-              {
-                "x": 0.64285713,
-                "y": 0.0
-              },
-              {
-                "x": 0.5714286,
-                "y": 0.0
-              },
-              {
-                "x": 0.5714286,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 32
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -2.9919376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.5,
-                "y": 0.5
-              },
-              {
-                "x": 0.5,
-                "y": 0.0
-              },
-              {
-                "x": 0.42857143,
-                "y": 0.0
-              },
-              {
-                "x": 0.42857143,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 33
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -3.2863376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 34
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -5.5391376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 35
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -5.6671376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.21428572,
-                "y": 1.0
-              },
-              {
-                "x": 0.21428572,
-                "y": 0.5
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.5
-              },
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 36
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -5.7823376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.2857143,
-                "y": 1.0
-              },
-              {
-                "x": 0.2857143,
-                "y": 0.5
-              },
-              {
-                "x": 0.21428572,
-                "y": 0.5
-              },
-              {
-                "x": 0.21428572,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 37
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1.3603138E8,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 38
-        }
-      },
-      {
-        "type": "Components.TestComponent",
-        "properties": {
-          "collidertype": 0,
-          "friction": 0.0,
-          "Velcoity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "U_ID": 39
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": 100.0,
-        "y": 100.0
-      },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.21428572,
-                "y": 0.5
-              },
-              {
-                "x": 0.21428572,
-                "y": 0.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 40
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1119376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.21428572,
-                "y": 0.5
-              },
-              {
-                "x": 0.21428572,
-                "y": 0.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 41
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -4575376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.71428573,
-                "y": 0.5
+                "y": 0.9166667
               },
               {
                 "x": 0.71428573,
-                "y": 0.0
-              },
-              {
-                "x": 0.64285713,
-                "y": 0.0
-              },
-              {
-                "x": 0.64285713,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 42
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1.2767376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 43
-        }
-      },
-      {
-        "type": "Components.TestComponent",
-        "properties": {
-          "collidertype": 0,
-          "friction": 0.0,
-          "Velcoity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "U_ID": 44
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": 100.0,
-        "y": 100.0
-      },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 45
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -2399376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.5,
-                "y": 1.0
-              },
-              {
-                "x": 0.5,
-                "y": 0.5
-              },
-              {
-                "x": 0.42857143,
-                "y": 0.5
-              },
-              {
-                "x": 0.42857143,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 46
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -3935376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 47
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -4703376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 48
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1.3279376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.78571427,
-                "y": 1.0
-              },
-              {
-                "x": 0.78571427,
-                "y": 0.5
-              },
-              {
-                "x": 0.71428573,
-                "y": 0.5
+                "y": 0.9166667
               },
               {
                 "x": 0.71428573,
@@ -2464,4012 +503,1502 @@
               }
             ]
           },
-          "U_ID": 49
+          "uid": 9
         }
       }
     ],
-    "Transform": {
-      "Position": {
-        "x": -3.3503376E7,
-        "y": -17.0
+    "transform": {
+      "position": {
+        "x": 347.3333,
+        "y": 577.36597
       },
-      "Scale": {
+      "scale": {
         "x": 64.0,
         "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
       }
     },
     "zIndex": 0
   },
   {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
+    "uid": 9,
+    "name": "Sprite_Object_Gen",
+    "components": [
       {
-        "type": "Components.SpriteRenderer",
+        "type": "components.SpriteRenderer",
         "properties": {
-          "Color": {
+          "color": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
             "w": 1.0
           },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
             },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
+            "texCoords": [
               {
                 "x": 0.14285715,
-                "y": 1.0
+                "y": 0.6666667
               },
               {
                 "x": 0.14285715,
-                "y": 0.5
+                "y": 0.5833333
               },
               {
-                "x": 0.071428575,
-                "y": 0.5
+                "x": 0.0,
+                "y": 0.5833333
               },
               {
-                "x": 0.071428575,
-                "y": 1.0
+                "x": 0.0,
+                "y": 0.6666667
               }
             ]
           },
-          "U_ID": 50
+          "uid": 10
         }
       }
     ],
-    "Transform": {
-      "Position": {
-        "x": -3.4399376E7,
-        "y": -17.0
+    "transform": {
+      "position": {
+        "x": 535.3333,
+        "y": 521.60004
       },
-      "Scale": {
+      "scale": {
         "x": 64.0,
         "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
       }
     },
     "zIndex": 0
   },
   {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
+    "uid": 10,
+    "name": "Sprite_Object_Gen",
+    "components": [
       {
-        "type": "Components.SpriteRenderer",
+        "type": "components.SpriteRenderer",
         "properties": {
-          "Color": {
+          "color": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
             "w": 1.0
           },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
             },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
+            "texCoords": [
+              {
+                "x": 0.2857143,
+                "y": 0.6666667
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.5833333
+              },
               {
                 "x": 0.14285715,
-                "y": 1.0
+                "y": 0.5833333
               },
               {
                 "x": 0.14285715,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 1.0
+                "y": 0.6666667
               }
             ]
           },
-          "U_ID": 51
+          "uid": 11
         }
       }
     ],
-    "Transform": {
-      "Position": {
-        "x": -3.7855376E7,
-        "y": -17.0
+    "transform": {
+      "position": {
+        "x": 358.88885,
+        "y": 423.3075
       },
-      "Scale": {
+      "scale": {
         "x": 64.0,
         "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
       }
     },
     "zIndex": 0
   },
   {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
+    "uid": 11,
+    "name": "Sprite_Object_Gen",
+    "components": [
       {
-        "type": "Components.SpriteRenderer",
+        "type": "components.SpriteRenderer",
         "properties": {
-          "Color": {
+          "color": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
             "w": 1.0
           },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
             },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.42857143,
-                "y": 1.0
-              },
-              {
-                "x": 0.42857143,
-                "y": 0.5
-              },
-              {
-                "x": 0.35714287,
-                "y": 0.5
-              },
-              {
-                "x": 0.35714287,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 52
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -4.7967376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 53
-        }
-      },
-      {
-        "type": "Components.TestComponent",
-        "properties": {
-          "collidertype": 0,
-          "friction": 0.0,
-          "Velcoity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "U_ID": 54
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": 100.0,
-        "y": 100.0
-      },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.5714286,
-                "y": 1.0
-              },
-              {
-                "x": 0.5714286,
-                "y": 0.5
-              },
-              {
-                "x": 0.5,
-                "y": 0.5
-              },
-              {
-                "x": 0.5,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 55
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -6623376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.5714286,
-                "y": 1.0
-              },
-              {
-                "x": 0.5714286,
-                "y": 0.5
-              },
-              {
-                "x": 0.5,
-                "y": 0.5
-              },
-              {
-                "x": 0.5,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 56
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -7647376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.5714286,
-                "y": 1.0
-              },
-              {
-                "x": 0.5714286,
-                "y": 0.5
-              },
-              {
-                "x": 0.5,
-                "y": 0.5
-              },
-              {
-                "x": 0.5,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 57
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -2.3007376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.9285714,
-                "y": 1.0
-              },
-              {
-                "x": 0.9285714,
-                "y": 0.5
-              },
-              {
-                "x": 0.85714287,
-                "y": 0.5
-              },
-              {
-                "x": 0.85714287,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 58
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -2.3775376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.9285714,
-                "y": 1.0
-              },
-              {
-                "x": 0.9285714,
-                "y": 0.5
-              },
-              {
-                "x": 0.85714287,
-                "y": 0.5
-              },
-              {
-                "x": 0.85714287,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 59
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -2.5311376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.5,
-                "y": 1.0
-              },
-              {
-                "x": 0.5,
-                "y": 0.5
-              },
-              {
-                "x": 0.42857143,
-                "y": 0.5
-              },
-              {
-                "x": 0.42857143,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 60
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -2.7999376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.071428575,
-                "y": 1.0
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              },
-              {
-                "x": 0.0,
-                "y": 0.5
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 61
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -4.0671376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
+            "texCoords": [
               {
                 "x": 0.85714287,
                 "y": 1.0
               },
               {
                 "x": 0.85714287,
-                "y": 0.5
+                "y": 0.9166667
               },
               {
-                "x": 0.78571427,
-                "y": 0.5
+                "x": 0.71428573,
+                "y": 0.9166667
               },
-              {
-                "x": 0.78571427,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 62
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -4.5023376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 63
-        }
-      },
-      {
-        "type": "Components.TestComponent",
-        "properties": {
-          "collidertype": 0,
-          "friction": 0.0,
-          "Velcoity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "U_ID": 64
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": 100.0,
-        "y": 100.0
-      },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.2857143,
-                "y": 1.0
-              },
-              {
-                "x": 0.2857143,
-                "y": 0.5
-              },
-              {
-                "x": 0.21428572,
-                "y": 0.5
-              },
-              {
-                "x": 0.21428572,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 65
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -2399376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.2857143,
-                "y": 1.0
-              },
-              {
-                "x": 0.2857143,
-                "y": 0.5
-              },
-              {
-                "x": 0.21428572,
-                "y": 0.5
-              },
-              {
-                "x": 0.21428572,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 66
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -3551376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.64285713,
-                "y": 1.0
-              },
-              {
-                "x": 0.64285713,
-                "y": 0.5
-              },
-              {
-                "x": 0.5714286,
-                "y": 0.5
-              },
-              {
-                "x": 0.5714286,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 67
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -8031376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 68
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1.3535376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.42857143,
-                "y": 0.5
-              },
-              {
-                "x": 0.42857143,
-                "y": 0.0
-              },
-              {
-                "x": 0.35714287,
-                "y": 0.0
-              },
-              {
-                "x": 0.35714287,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 69
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1.4559376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.42857143,
-                "y": 0.5
-              },
-              {
-                "x": 0.42857143,
-                "y": 0.0
-              },
-              {
-                "x": 0.35714287,
-                "y": 0.0
-              },
-              {
-                "x": 0.35714287,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 70
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1.8655376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 71
-        }
-      },
-      {
-        "type": "Components.TestComponent",
-        "properties": {
-          "collidertype": 0,
-          "friction": 0.0,
-          "Velcoity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "U_ID": 72
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": 100.0,
-        "y": 100.0
-      },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 73
-        }
-      },
-      {
-        "type": "Components.TestComponent",
-        "properties": {
-          "collidertype": 0,
-          "friction": 0.0,
-          "Velcoity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "U_ID": 74
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": 100.0,
-        "y": 100.0
-      },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.64285713,
-                "y": 0.5
-              },
-              {
-                "x": 0.64285713,
-                "y": 0.0
-              },
-              {
-                "x": 0.5714286,
-                "y": 0.0
-              },
-              {
-                "x": 0.5714286,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 75
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1.0463376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.2857143,
-                "y": 1.0
-              },
-              {
-                "x": 0.2857143,
-                "y": 0.5
-              },
-              {
-                "x": 0.21428572,
-                "y": 0.5
-              },
-              {
-                "x": 0.21428572,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 76
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1.1359376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.2857143,
-                "y": 1.0
-              },
-              {
-                "x": 0.2857143,
-                "y": 0.5
-              },
-              {
-                "x": 0.21428572,
-                "y": 0.5
-              },
-              {
-                "x": 0.21428572,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 77
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -3.0175376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 78
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -3.1199376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 79
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -3.1967376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 80
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -4.3231376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 81
-        }
-      },
-      {
-        "type": "Components.TestComponent",
-        "properties": {
-          "collidertype": 24,
-          "friction": 0.0,
-          "Velcoity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "U_ID": 82
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": 100.0,
-        "y": 100.0
-      },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.5714286,
-                "y": 0.5
-              },
-              {
-                "x": 0.5714286,
-                "y": 0.0
-              },
-              {
-                "x": 0.5,
-                "y": 0.0
-              },
-              {
-                "x": 0.5,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 83
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1.4303376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 84
-        }
-      },
-      {
-        "type": "Components.TestComponent",
-        "properties": {
-          "collidertype": 0,
-          "friction": 0.0,
-          "Velcoity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "U_ID": 85
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": 100.0,
-        "y": 100.0
-      },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
               {
                 "x": 0.71428573,
                 "y": 1.0
+              }
+            ]
+          },
+          "uid": 12
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 535.3333,
+        "y": 505.15112
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 12,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.42857143,
+                "y": 0.9166667
               },
+              {
+                "x": 0.42857143,
+                "y": 0.8333333
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.8333333
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.9166667
+              }
+            ]
+          },
+          "uid": 13
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 537.1111,
+        "y": 424.10986
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 13,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.2857143,
+                "y": 0.75
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.6666667
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.6666667
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.75
+              }
+            ]
+          },
+          "uid": 14
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 638.44446,
+        "y": 570.9469
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 14,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.85714287,
+                "y": 1.0
+              },
+              {
+                "x": 0.85714287,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.71428573,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.71428573,
+                "y": 1.0
+              }
+            ]
+          },
+          "uid": 15
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 739.3333,
+        "y": 448.18152
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 15,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.14285715,
+                "y": 0.5833333
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.5
+              },
+              {
+                "x": 0.0,
+                "y": 0.5
+              },
+              {
+                "x": 0.0,
+                "y": 0.5833333
+              }
+            ]
+          },
+          "uid": 16
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 548.6667,
+        "y": 353.90094
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 16,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.5714286,
+                "y": 0.8333333
+              },
+              {
+                "x": 0.5714286,
+                "y": 0.75
+              },
+              {
+                "x": 0.42857143,
+                "y": 0.75
+              },
+              {
+                "x": 0.42857143,
+                "y": 0.8333333
+              }
+            ]
+          },
+          "uid": 17
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 534.8889,
+        "y": 567.3362
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 17,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.42857143,
+                "y": 0.75
+              },
+              {
+                "x": 0.42857143,
+                "y": 0.6666667
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.6666667
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.75
+              }
+            ]
+          },
+          "uid": 18
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": -39.77777,
+        "y": 519.9953
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 18,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.42857143,
+                "y": 0.75
+              },
+              {
+                "x": 0.42857143,
+                "y": 0.6666667
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.6666667
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.75
+              }
+            ]
+          },
+          "uid": 19
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 1013.55566,
+        "y": 654.7965
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 19,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.5714286,
+                "y": 0.8333333
+              },
+              {
+                "x": 0.5714286,
+                "y": 0.75
+              },
+              {
+                "x": 0.42857143,
+                "y": 0.75
+              },
+              {
+                "x": 0.42857143,
+                "y": 0.8333333
+              }
+            ]
+          },
+          "uid": 20
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 599.3333,
+        "y": 609.46155
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 20,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.2857143,
+                "y": 0.6666667
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.5833333
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.5833333
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.6666667
+              }
+            ]
+          },
+          "uid": 21
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 851.33325,
+        "y": 651.1857
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 21,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.2857143,
+                "y": 0.6666667
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.5833333
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.5833333
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.6666667
+              }
+            ]
+          },
+          "uid": 22
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 1012.66675,
+        "y": 652.3893
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 22,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.2857143,
+                "y": 0.6666667
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.5833333
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.5833333
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.6666667
+              }
+            ]
+          },
+          "uid": 23
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 982.8889,
+        "y": 645.9702
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 23,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.71428573,
+                "y": 0.41666666
+              },
+              {
+                "x": 0.71428573,
+                "y": 0.33333334
+              },
+              {
+                "x": 0.5714286,
+                "y": 0.33333334
+              },
+              {
+                "x": 0.5714286,
+                "y": 0.41666666
+              }
+            ]
+          },
+          "uid": 24
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 301.55554,
+        "y": 397.2299
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 24,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.71428573,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.71428573,
+                "y": 0.8333333
+              },
+              {
+                "x": 0.5714286,
+                "y": 0.8333333
+              },
+              {
+                "x": 0.5714286,
+                "y": 0.9166667
+              }
+            ]
+          },
+          "uid": 25
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 24.222229,
+        "y": 225.51883
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 25,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.5714286,
+                "y": 0.9166667
+              },
+              {
+                "x": 0.5714286,
+                "y": 0.8333333
+              },
+              {
+                "x": 0.42857143,
+                "y": 0.8333333
+              },
+              {
+                "x": 0.42857143,
+                "y": 0.9166667
+              }
+            ]
+          },
+          "uid": 26
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 50.0,
+        "y": 330.63168
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 26,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.42857143,
+                "y": 0.8333333
+              },
+              {
+                "x": 0.42857143,
+                "y": 0.75
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.75
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.8333333
+              }
+            ]
+          },
+          "uid": 27
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 26.888855,
+        "y": 131.63942
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 27,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.5714286,
+                "y": 0.8333333
+              },
+              {
+                "x": 0.5714286,
+                "y": 0.75
+              },
+              {
+                "x": 0.42857143,
+                "y": 0.75
+              },
+              {
+                "x": 0.42857143,
+                "y": 0.8333333
+              }
+            ]
+          },
+          "uid": 28
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 280.22223,
+        "y": 357.51166
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 28,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.14285715,
+                "y": 0.6666667
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.5833333
+              },
+              {
+                "x": 0.0,
+                "y": 0.5833333
+              },
+              {
+                "x": 0.0,
+                "y": 0.6666667
+              }
+            ]
+          },
+          "uid": 29
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 916.66675,
+        "y": 647.9762
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 29,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.42857143,
+                "y": 0.75
+              },
+              {
+                "x": 0.42857143,
+                "y": 0.6666667
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.6666667
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.75
+              }
+            ]
+          },
+          "uid": 30
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": -50.444427,
+        "y": 275.6681
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 30,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.2857143,
+                "y": 0.16666667
+              },
+              {
+                "x": 0.2857143,
+                "y": 0.083333336
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.083333336
+              },
+              {
+                "x": 0.14285715,
+                "y": 0.16666667
+              }
+            ]
+          },
+          "uid": 31
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 64.66666,
+        "y": 292.91943
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 31,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.71428573,
+                "y": 0.41666666
+              },
+              {
+                "x": 0.71428573,
+                "y": 0.33333334
+              },
+              {
+                "x": 0.5714286,
+                "y": 0.33333334
+              },
+              {
+                "x": 0.5714286,
+                "y": 0.41666666
+              }
+            ]
+          },
+          "uid": 32
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 769.1111,
+        "y": 302.94928
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 32,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
+              {
+                "x": 0.5714286,
+                "y": 0.33333334
+              },
+              {
+                "x": 0.5714286,
+                "y": 0.25
+              },
+              {
+                "x": 0.42857143,
+                "y": 0.25
+              },
+              {
+                "x": 0.42857143,
+                "y": 0.33333334
+              }
+            ]
+          },
+          "uid": 33
+        }
+      }
+    ],
+    "transform": {
+      "position": {
+        "x": 670.44446,
+        "y": 259.62033
+      },
+      "scale": {
+        "x": 64.0,
+        "y": 64.0
+      }
+    },
+    "zIndex": 0
+  },
+  {
+    "uid": 33,
+    "name": "Sprite_Object_Gen",
+    "components": [
+      {
+        "type": "components.SpriteRenderer",
+        "properties": {
+          "color": {
+            "x": 1.0,
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
+          },
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
+            },
+            "texCoords": [
               {
                 "x": 0.71428573,
                 "y": 0.5
               },
               {
-                "x": 0.64285713,
-                "y": 0.5
-              },
-              {
-                "x": 0.64285713,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 86
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1.4559376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.14285715,
-                "y": 0.5
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.0
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.0
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 87
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -2.7743376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 88
-        }
-      },
-      {
-        "type": "Components.TestComponent",
-        "properties": {
-          "collidertype": 0,
-          "friction": 0.0,
-          "Velcoity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "U_ID": 89
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": 100.0,
-        "y": 100.0
-      },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.64285713,
-                "y": 0.5
-              },
-              {
-                "x": 0.64285713,
-                "y": 0.0
-              },
-              {
-                "x": 0.5714286,
-                "y": 0.0
-              },
-              {
-                "x": 0.5714286,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 90
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1.0783376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.5
-              },
-              {
-                "x": 0.9285714,
-                "y": 0.5
-              },
-              {
-                "x": 0.9285714,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 91
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1.3471376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.071428575,
-                "y": 1.0
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              },
-              {
-                "x": 0.0,
-                "y": 0.5
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 92
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1.8591376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.85714287,
-                "y": 0.5
-              },
-              {
-                "x": 0.85714287,
-                "y": 0.0
-              },
-              {
-                "x": 0.78571427,
-                "y": 0.0
-              },
-              {
-                "x": 0.78571427,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 93
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1.9743376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.42857143,
-                "y": 0.5
-              },
-              {
-                "x": 0.42857143,
-                "y": 0.0
-              },
-              {
-                "x": 0.35714287,
-                "y": 0.0
-              },
-              {
-                "x": 0.35714287,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 94
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -2.6911376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.78571427,
-                "y": 0.5
-              },
-              {
-                "x": 0.78571427,
-                "y": 0.0
-              },
-              {
                 "x": 0.71428573,
-                "y": 0.0
+                "y": 0.41666666
               },
               {
-                "x": 0.71428573,
+                "x": 0.5714286,
+                "y": 0.41666666
+              },
+              {
+                "x": 0.5714286,
                 "y": 0.5
               }
             ]
           },
-          "U_ID": 95
+          "uid": 34
         }
       }
     ],
-    "Transform": {
-      "Position": {
-        "x": -2.7551376E7,
-        "y": -17.0
+    "transform": {
+      "position": {
+        "x": 871.33325,
+        "y": 558.1087
       },
-      "Scale": {
+      "scale": {
         "x": 64.0,
         "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
       }
     },
     "zIndex": 0
   },
   {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
+    "uid": 34,
+    "name": "Sprite_Object_Gen",
+    "components": [
       {
-        "type": "Components.SpriteRenderer",
+        "type": "components.SpriteRenderer",
         "properties": {
-          "Color": {
+          "color": {
             "x": 1.0,
             "y": 1.0,
             "z": 1.0,
             "w": 1.0
           },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
+          "sprite": {
+            "width": 16.0,
+            "height": 16.0,
+            "texture": {
+              "filepath": "assets/images/spritesheets/decorationsAndBlocks.png",
+              "texID": 2,
+              "width": 112,
+              "height": 192
             },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
+            "texCoords": [
               {
-                "x": 0.78571427,
-                "y": 0.5
-              },
-              {
-                "x": 0.78571427,
-                "y": 0.0
-              },
-              {
-                "x": 0.71428573,
-                "y": 0.0
-              },
-              {
-                "x": 0.71428573,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 96
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -2.8831376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.9285714,
-                "y": 1.0
-              },
-              {
-                "x": 0.9285714,
-                "y": 0.5
-              },
-              {
-                "x": 0.85714287,
-                "y": 0.5
-              },
-              {
-                "x": 0.85714287,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 97
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -3.2031376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.14285715,
-                "y": 1.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 98
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -4.0735376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 99
-        }
-      },
-      {
-        "type": "Components.TestComponent",
-        "properties": {
-          "collidertype": 0,
-          "friction": 0.0,
-          "Velcoity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "U_ID": 100
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": 100.0,
-        "y": 100.0
-      },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.5,
-                "y": 1.0
-              },
-              {
-                "x": 0.5,
-                "y": 0.5
-              },
-              {
-                "x": 0.42857143,
-                "y": 0.5
-              },
-              {
-                "x": 0.42857143,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 101
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1247376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.35714287,
-                "y": 0.5
-              },
-              {
-                "x": 0.35714287,
-                "y": 0.0
+                "x": 0.2857143,
+                "y": 0.6666667
               },
               {
                 "x": 0.2857143,
-                "y": 0.0
-              },
-              {
-                "x": 0.2857143,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 102
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -2143376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.35714287,
-                "y": 0.5
-              },
-              {
-                "x": 0.35714287,
-                "y": 0.0
-              },
-              {
-                "x": 0.2857143,
-                "y": 0.0
-              },
-              {
-                "x": 0.2857143,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 103
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -6751376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.5,
-                "y": 0.5
-              },
-              {
-                "x": 0.5,
-                "y": 0.0
-              },
-              {
-                "x": 0.42857143,
-                "y": 0.0
-              },
-              {
-                "x": 0.42857143,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 104
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -8927376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.64285713,
-                "y": 1.0
-              },
-              {
-                "x": 0.64285713,
-                "y": 0.5
-              },
-              {
-                "x": 0.5714286,
-                "y": 0.5
-              },
-              {
-                "x": 0.5714286,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 105
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -9695376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.64285713,
-                "y": 1.0
-              },
-              {
-                "x": 0.64285713,
-                "y": 0.5
-              },
-              {
-                "x": 0.5714286,
-                "y": 0.5
-              },
-              {
-                "x": 0.5714286,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 106
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1.1231376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.14285715,
-                "y": 1.0
+                "y": 0.5833333
               },
               {
                 "x": 0.14285715,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 107
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1.4431376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.42857143,
-                "y": 0.5
-              },
-              {
-                "x": 0.42857143,
-                "y": 0.0
-              },
-              {
-                "x": 0.35714287,
-                "y": 0.0
-              },
-              {
-                "x": 0.35714287,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 108
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1.6479376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.21428572,
-                "y": 1.0
-              },
-              {
-                "x": 0.21428572,
-                "y": 0.5
+                "y": 0.5833333
               },
               {
                 "x": 0.14285715,
-                "y": 0.5
-              },
-              {
-                "x": 0.14285715,
-                "y": 1.0
+                "y": 0.6666667
               }
             ]
           },
-          "U_ID": 109
+          "uid": 35
         }
       }
     ],
-    "Transform": {
-      "Position": {
-        "x": -2.0191376E7,
-        "y": -17.0
+    "transform": {
+      "position": {
+        "x": 700.2222,
+        "y": 179.38152
       },
-      "Scale": {
+      "scale": {
         "x": 64.0,
         "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
       }
     },
     "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 110
-        }
-      },
-      {
-        "type": "Components.TestComponent",
-        "properties": {
-          "collidertype": 0,
-          "friction": 0.0,
-          "Velcoity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "U_ID": 111
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": 100.0,
-        "y": 100.0
-      },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.35714287,
-                "y": 1.0
-              },
-              {
-                "x": 0.35714287,
-                "y": 0.5
-              },
-              {
-                "x": 0.2857143,
-                "y": 0.5
-              },
-              {
-                "x": 0.2857143,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 112
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -2143376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.64285713,
-                "y": 1.0
-              },
-              {
-                "x": 0.64285713,
-                "y": 0.5
-              },
-              {
-                "x": 0.5714286,
-                "y": 0.5
-              },
-              {
-                "x": 0.5714286,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 113
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -4191376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.071428575,
-                "y": 0.5
-              },
-              {
-                "x": 0.071428575,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 114
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -5087376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.42857143,
-                "y": 0.5
-              },
-              {
-                "x": 0.42857143,
-                "y": 0.0
-              },
-              {
-                "x": 0.35714287,
-                "y": 0.0
-              },
-              {
-                "x": 0.35714287,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 115
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -8415376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.2857143,
-                "y": 0.5
-              },
-              {
-                "x": 0.2857143,
-                "y": 0.0
-              },
-              {
-                "x": 0.21428572,
-                "y": 0.0
-              },
-              {
-                "x": 0.21428572,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 116
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1.5967376E7,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 117
-        }
-      },
-      {
-        "type": "Components.TestComponent",
-        "properties": {
-          "collidertype": 0,
-          "friction": 0.0,
-          "Velcoity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "U_ID": 118
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": 100.0,
-        "y": 100.0
-      },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.21428572,
-                "y": 0.5
-              },
-              {
-                "x": 0.21428572,
-                "y": 0.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.0
-              },
-              {
-                "x": 0.14285715,
-                "y": 0.5
-              }
-            ]
-          },
-          "U_ID": 119
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -3295376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.5714286,
-                "y": 1.0
-              },
-              {
-                "x": 0.5714286,
-                "y": 0.5
-              },
-              {
-                "x": 0.5,
-                "y": 0.5
-              },
-              {
-                "x": 0.5,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 120
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -4447376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.5714286,
-                "y": 1.0
-              },
-              {
-                "x": 0.5714286,
-                "y": 0.5
-              },
-              {
-                "x": 0.5,
-                "y": 0.5
-              },
-              {
-                "x": 0.5,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 121
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -5471376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.5,
-                "y": 1.0
-              },
-              {
-                "x": 0.5,
-                "y": 0.5
-              },
-              {
-                "x": 0.42857143,
-                "y": 0.5
-              },
-              {
-                "x": 0.42857143,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 122
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -6367376.0,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Sprite_Object_Gen",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Texture": {
-              "TextureID": 2,
-              "Width": 224,
-              "Height": 32
-            },
-            "Width": 16.0,
-            "Height": 16.0,
-            "TextureCoordinates": [
-              {
-                "x": 0.5,
-                "y": 1.0
-              },
-              {
-                "x": 0.5,
-                "y": 0.5
-              },
-              {
-                "x": 0.42857143,
-                "y": 0.5
-              },
-              {
-                "x": 0.42857143,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 123
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": -1.2041538E8,
-        "y": -17.0
-      },
-      "Scale": {
-        "x": 64.0,
-        "y": 64.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": 0
-  },
-  {
-    "UID": -1,
-    "Name": "Object 1",
-    "Components": [
-      {
-        "type": "Components.SpriteRenderer",
-        "properties": {
-          "Color": {
-            "x": 1.0,
-            "y": 1.0,
-            "z": 1.0,
-            "w": 1.0
-          },
-          "Sprite": {
-            "Width": 0.0,
-            "Height": 0.0,
-            "TextureCoordinates": [
-              {
-                "x": 1.0,
-                "y": 1.0
-              },
-              {
-                "x": 1.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 0.0
-              },
-              {
-                "x": 0.0,
-                "y": 1.0
-              }
-            ]
-          },
-          "U_ID": 124
-        }
-      },
-      {
-        "type": "Components.TestComponent",
-        "properties": {
-          "collidertype": 0,
-          "friction": 0.0,
-          "Velcoity": {
-            "x": 0.0,
-            "y": 0.5,
-            "z": 0.0
-          },
-          "U_ID": 125
-        }
-      }
-    ],
-    "Transform": {
-      "Position": {
-        "x": 100.0,
-        "y": 100.0
-      },
-      "Scale": {
-        "x": 128.0,
-        "y": 128.0
-      },
-      "Empty": {
-        "x": 0.0,
-        "y": 0.0
-      }
-    },
-    "zIndex": -1
   }
 ]

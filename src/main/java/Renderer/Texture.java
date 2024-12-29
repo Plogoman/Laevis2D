@@ -5,79 +5,77 @@ import org.lwjgl.BufferUtils;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 
-import static org.lwjgl.opengl.GL33.*;
+import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.stb.STBImage.*;
 
 public class Texture {
-    private String FilePath;
-    private int TextureID;
-    private int Width, Height;
+    private String filepath;
+    private int texID;
+    private int width, height;
 
-/*
-    public Texture(String FilePath){
+//    public Texture(String filepath) {
+//
+//    }
 
-    }
-*/
+    public void init(String filepath) {
+        this.filepath = filepath;
 
-    public void init(String filePath){
-        this.FilePath = FilePath;
+        // Generate texture on GPU
+        texID = glGenTextures();
+        glBindTexture(GL_TEXTURE_2D, texID);
 
-        //Generate Texture
-        TextureID = glGenTextures();
-        glBindTexture(GL_TEXTURE_2D, TextureID);
-
-        //Set Texture Parameters
-        //Repeat Image in both Directions
+        // Set texture parameters
+        // Repeat image in both directions
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
-        //when stretching the image, pixelate
+        // When stretching the image, pixelate
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-
-        //when shrinking pixelate
+        // When shrinking an image, pixelate
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
-        IntBuffer Width = BufferUtils.createIntBuffer(1);
-        IntBuffer Height = BufferUtils.createIntBuffer(1);
-        IntBuffer Channels = BufferUtils.createIntBuffer(1);
-
+        IntBuffer width = BufferUtils.createIntBuffer(1);
+        IntBuffer height = BufferUtils.createIntBuffer(1);
+        IntBuffer channels = BufferUtils.createIntBuffer(1);
         stbi_set_flip_vertically_on_load(true);
+        ByteBuffer image = stbi_load(filepath, width, height, channels, 0);
 
-        ByteBuffer Image = stbi_load(filePath, Width, Height, Channels, 0);
+        if (image != null) {
+            this.width = width.get(0);
+            this.height = height.get(0);
 
-        if (Image != null) {
-            this.Width = Width.get(0);
-            this.Height = Height.get(0);
-
-            if (Channels.get(0) == 3) {
-                glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, Width.get(0), Height.get(0), 0, GL_RGB, GL_UNSIGNED_BYTE, Image);
-            } else if (Channels.get(0) == 4) {
-                glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, Width.get(0), Height.get(0), 0, GL_RGBA, GL_UNSIGNED_BYTE, Image);
+            if (channels.get(0) == 3) {
+                glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width.get(0), height.get(0),
+                        0, GL_RGB, GL_UNSIGNED_BYTE, image);
+            } else if (channels.get(0) == 4) {
+                glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width.get(0), height.get(0),
+                        0, GL_RGBA, GL_UNSIGNED_BYTE, image);
             } else {
-                assert false : "Error: (Texture) Unknown number of Channels " + Channels.get(0) + " ";
+                assert false : "Error: (Texture) Unknown number of channesl '" + channels.get(0) + "'";
             }
         } else {
-            assert false : "Error: (Texture) Could not Load Image " + FilePath + " ";
+            assert false : "Error: (Texture) Could not load image '" + filepath + "'";
         }
 
-        stbi_image_free(Image);
-    }
-    public void BindTexture() {
-        glBindTexture(GL_TEXTURE_2D, TextureID);
+        stbi_image_free(image);
     }
 
-    public void UnbindTexture() {
+    public void bind() {
+        glBindTexture(GL_TEXTURE_2D, texID);
+    }
+
+    public void unbind() {
         glBindTexture(GL_TEXTURE_2D, 0);
     }
 
-    public int GetWidth() {
-        return this.Width;
+    public int getWidth() {
+        return this.width;
     }
 
-    public int GetHeight() {
-        return this.Height;
+    public int getHeight() {
+        return this.height;
     }
-    public int getTextureID(){
-        return TextureID;
+
+    public int getId() {
+        return texID;
     }
 }

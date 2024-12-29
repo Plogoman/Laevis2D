@@ -1,56 +1,54 @@
-package Components;
+package components;
 
-import Renderer.Texture;
 import org.joml.Vector2f;
+import Renderer.Texture;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class SpriteSheet {
-	private Texture Texture;
-	private List<Sprite> Sprites;
+public class Spritesheet {
 
-	public SpriteSheet(Texture Texture, int SpriteWidth, int SpriteHeight, int NumberOfSprites, int Spacing) {
-		this.Sprites = new ArrayList<>();
+    private Texture texture;
+    private List<Sprite> sprites;
 
-		this.Texture = Texture;
-		int CurrentX = 0;
-		int CurrentY = Texture.GetHeight() - SpriteHeight;
+    public Spritesheet(Texture texture, int spriteWidth, int spriteHeight, int numSprites, int spacing) {
+        this.sprites = new ArrayList<>();
 
-		// This Gets a Single Sprite from the Sprite Sheet
-		for (int i = 0; i < NumberOfSprites; i++) {
-			float TopY = (CurrentY + SpriteHeight) / (float)Texture.GetHeight();
-			float RightX = (CurrentX + SpriteWidth) / (float)Texture.GetWidth();
-			float LeftX = CurrentX / (float)Texture.GetWidth();
-			float BottomY = CurrentY / (float)Texture.GetHeight();
+        this.texture = texture;
+        int currentX = 0;
+        int currentY = texture.getHeight() - spriteHeight;
+        for (int i=0; i < numSprites; i++) {
+            float topY = (currentY + spriteHeight) / (float)texture.getHeight();
+            float rightX = (currentX + spriteWidth) / (float)texture.getWidth();
+            float leftX = currentX / (float)texture.getWidth();
+            float bottomY = currentY / (float)texture.getHeight();
 
-			Vector2f[] TextureCoordinates = {
-				new Vector2f(RightX, TopY),
-				new Vector2f(RightX, BottomY),
-				new Vector2f(LeftX, BottomY),
-				new Vector2f(LeftX, TopY)
-			};
+            Vector2f[] texCoords = {
+                    new Vector2f(rightX, topY),
+                    new Vector2f(rightX, bottomY),
+                    new Vector2f(leftX, bottomY),
+                    new Vector2f(leftX, topY)
+            };
+            Sprite sprite = new Sprite();
+            sprite.setTexture(this.texture);
+            sprite.setTexCoords(texCoords);
+            sprite.setWidth(spriteWidth);
+            sprite.setHeight(spriteHeight);
+            this.sprites.add(sprite);
 
-			Sprite Sprite = new Sprite();
-			Sprite.setTexture(this.Texture);
-			Sprite.setTextCoords(TextureCoordinates);
-			Sprite.setWidth(SpriteWidth);
-			Sprite.setHeight(SpriteHeight);
-			this.Sprites.add(Sprite);
+            currentX += spriteWidth + spacing;
+            if (currentX >= texture.getWidth()) {
+                currentX = 0;
+                currentY -= spriteHeight + spacing;
+            }
+        }
+    }
 
-			CurrentX += SpriteWidth + Spacing;
-			if (CurrentX >= Texture.GetWidth()) {
-				CurrentX = 0;
-				CurrentY -= SpriteHeight + Spacing;
-			}
-		}
-	}
+    public Sprite getSprite(int index) {
+        return this.sprites.get(index);
+    }
 
-	public Sprite GetSprite(int Index) {
-		return this.Sprites.get(Index);
-	}
-
-	public int size(){
-		return Sprites.size();
-	}
+    public int size() {
+        return sprites.size();
+    }
 }

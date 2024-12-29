@@ -1,196 +1,58 @@
 package Laevis;
 
-import LaevisUtilities.Time;
-import Renderer.DebugDraw;
-import org.lwjgl.*;
-import org.lwjgl.glfw.*;
-import org.lwjgl.opengl.*;
+import org.lwjgl.Version;
+import org.lwjgl.glfw.GLFWErrorCallback;
+import org.lwjgl.opengl.GL;
 import Scenes.LevelEditorScene;
 import Scenes.LevelScene;
 import Scenes.Scene;
 
-import static org.lwjgl.glfw.Callbacks.*;
+import static org.lwjgl.glfw.Callbacks.glfwFreeCallbacks;
 import static org.lwjgl.glfw.GLFW.*;
 import static org.lwjgl.opengl.GL11.*;
-import static org.lwjgl.system.MemoryUtil.*;
+import static org.lwjgl.system.MemoryUtil.NULL;
 
 public class Window {
-    private int Width;
-    private int Height;
-    private final String Title;
+    private int width, height;
+    private String title;
     private long glfwWindow;
-    private boolean FadeToBlack;
-    private ImGuiLayer imGuiLayer;
+    private ImGuiLayer imguiLayer;
+
     public float r, g, b, a;
+    private boolean fadeToBlack = false;
 
     private static Window window = null;
 
-    private static Scene CurrentScene;
+    private static Scene currentScene;
 
-    //Constructor
     private Window() {
-        this.Width = 1920;
-        this.Height = 1080;
-        this.Title = "Game Engine";
-
-
-        this.r = 0;
-        this.g = 0;
-        this.b = 0;
-        this.a = 0;
+        this.width = 1920;
+        this.height = 1080;
+        this.title = "Mario";
+        r = 1;
+        b = 1;
+        g = 1;
+        a = 1;
     }
 
-    //Change Scene
-    public static void ChangeScene(int NewScene) {
-        switch (NewScene) {
+    public static void changeScene(int newScene) {
+        switch (newScene) {
             case 0:
-                CurrentScene = new LevelEditorScene();
-
+                currentScene = new LevelEditorScene();
                 break;
             case 1:
-                CurrentScene = new LevelScene();
-;
+                currentScene = new LevelScene();
                 break;
             default:
-                assert false: "Unknown Scene '" + NewScene + "'";
+                assert false : "Unknown scene '" + newScene + "'";
                 break;
         }
-        CurrentScene.load();
-        CurrentScene.InitScene();
-        CurrentScene.StartScene();
 
+        currentScene.load();
+        currentScene.init();
+        currentScene.start();
     }
 
-    //Get Window
-    public static Window Get() {
-        if (Window.window == null) {
-            Window.window = new Window();
-        }
-
-        return Window.window;
-    }
-
-    //Get Scene
-    public static Scene GetScene() {
-        return Get().CurrentScene;
-    }
-
-
-    //changed for now so It's not used
-    public void init(){
-
-    }
-
-    //Run Engine
-    public void Run() {
-        System.out.println("LWJGL Version: " + Version.getVersion());
-        EngineInit();
-        EngineLoop();
-
-/*
-        CurrentScene.imgui();
-*/
-
-        glfwFreeCallbacks(glfwWindow);
-
-        glfwDestroyWindow(glfwWindow);
-
-        glfwTerminate();
-
-        glfwSetErrorCallback(null).free();
-    }
-
-    //Initialize Engine
-    public void EngineInit() { //init
-        // Setup an error callback. The default implementation
-        // will print the error message in System.err.
-        GLFWErrorCallback.createPrint(System.err).set();
-
-        // Initialize GLFW. Most GLFW functions will not work before doing this.
-        if ( !glfwInit() ) {
-            System.out.println("Unable to initialize GLFW");
-            System.exit(-1);
-        }
-
-        glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-
-        glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
-        glfwWindow = glfwCreateWindow(1920, 1080, "My Window", NULL, NULL);
-
-        if (glfwWindow == NULL) {
-            System.out.println("Unable to create window");
-            System.exit(-1);
-        }
-        glfwSetCursorPosCallback(glfwWindow, MouseListener::MouseScrollCallback);
-        glfwSetMouseButtonCallback(glfwWindow, MouseListener::MouseButtonCallback);
-        glfwSetScrollCallback(glfwWindow, MouseListener::MouseScrollCallback);
-        glfwSetKeyCallback(glfwWindow, KeyListener::KeyCallback);
-        glfwSetWindowSizeCallback(glfwWindow, (w, newWidth, newHeight) -> {
-            Window.setWidth(newWidth);
-            Window.setHeight(newHeight);
-        });
-
-        glfwMakeContextCurrent(glfwWindow);
-        glfwSwapInterval(1);
-        glfwShowWindow(glfwWindow);
-
-        GL.createCapabilities();
-
-        glEnable(GL_BLEND);
-        glBlendFunc(GL_ONE,GL_ONE_MINUS_SRC_ALPHA);
-
-        this.imGuiLayer=new ImGuiLayer(glfwWindow);
-        this.imGuiLayer.initImGui();
-
-        Window.ChangeScene(0);
-    }
-
-
-    //Engine Loop
-    public void EngineLoop() {
-        float BeginTime = Time.GetTime();
-        float EndTime;
-        float DeltaTime = -1.0f;
-
-
-        while (!glfwWindowShouldClose(glfwWindow)) {
-
-            glfwPollEvents();
-            DebugDraw.BeginFrame();
-            glClearColor(r, g, b, a);
-
-            glClear(GL_COLOR_BUFFER_BIT);
-
-            if (DeltaTime >= 0) {
-                DebugDraw.Draw();
-                CurrentScene.SceneUpdate(DeltaTime);
-            }
-            if (FadeToBlack) {
-                r = Math.max(r - 0.01f, 0);
-                g = Math.max(g - 0.01f, 0);
-                b = Math.max(b - 0.01f, 0);
-                a = Math.max(a - 0.01f, 0);
-            }
-
-            if (KeyListener.isKeyPressed(GLFW_KEY_SPACE)) {
-                FadeToBlack = true;
-            }
-            if(DeltaTime>=0){
-                CurrentScene.SceneUpdate(DeltaTime);
-            }
-            this.imGuiLayer.update(DeltaTime,CurrentScene);
-            glfwSwapBuffers(glfwWindow);
-
-
-
-
-            EndTime = Time.GetTime();
-            DeltaTime = EndTime - BeginTime;
-            BeginTime = EndTime;
-        }
-    CurrentScene.saveFile();
-    }
     public static Window get() {
         if (Window.window == null) {
             Window.window = new Window();
@@ -200,22 +62,117 @@ public class Window {
     }
 
     public static Scene getScene() {
-        return get().CurrentScene;
+        return get().currentScene;
+    }
+
+    public void run() {
+        System.out.println("Hello LWJGL " + Version.getVersion() + "!");
+
+        init();
+        loop();
+
+        // Free the memory
+        glfwFreeCallbacks(glfwWindow);
+        glfwDestroyWindow(glfwWindow);
+
+        // Terminate GLFW and the free the error callback
+        glfwTerminate();
+        glfwSetErrorCallback(null).free();
+    }
+
+    public void init() {
+        // Setup an error callback
+        GLFWErrorCallback.createPrint(System.err).set();
+
+        // Initialize GLFW
+        if (!glfwInit()) {
+            throw new IllegalStateException("Unable to initialize GLFW.");
+        }
+
+        // Configure GLFW
+        glfwDefaultWindowHints();
+        glfwWindowHint(GLFW_VISIBLE, GLFW_FALSE);
+        glfwWindowHint(GLFW_RESIZABLE, GLFW_TRUE);
+        glfwWindowHint(GLFW_MAXIMIZED, GLFW_TRUE);
+
+        // Create the window
+        glfwWindow = glfwCreateWindow(this.width, this.height, this.title, NULL, NULL);
+        if (glfwWindow == NULL) {
+            throw new IllegalStateException("Failed to create the GLFW window.");
+        }
+
+        glfwSetCursorPosCallback(glfwWindow, MouseListener::mousePosCallback);
+        glfwSetMouseButtonCallback(glfwWindow, MouseListener::mouseButtonCallback);
+        glfwSetScrollCallback(glfwWindow, MouseListener::mouseScrollCallback);
+        glfwSetKeyCallback(glfwWindow, KeyListener::keyCallback);
+        glfwSetWindowSizeCallback(glfwWindow, (w, newWidth, newHeight) -> {
+            Window.setWidth(newWidth);
+            Window.setHeight(newHeight);
+        });
+
+        // Make the OpenGL context current
+        glfwMakeContextCurrent(glfwWindow);
+        // Enable v-sync
+        glfwSwapInterval(1);
+
+        // Make the window visible
+        glfwShowWindow(glfwWindow);
+
+        // This line is critical for LWJGL's interoperation with GLFW's
+        // OpenGL context, or any context that is managed externally.
+        // LWJGL detects the context that is current in the current thread,
+        // creates the GLCapabilities instance and makes the OpenGL
+        // bindings available for use.
+        GL.createCapabilities();
+
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+        this.imguiLayer = new ImGuiLayer(glfwWindow);
+        this.imguiLayer.initImGui();
+
+        Window.changeScene(0);
+    }
+
+    public void loop() {
+        float beginTime = (float)glfwGetTime();
+        float endTime;
+        float dt = -1.0f;
+
+        while (!glfwWindowShouldClose(glfwWindow)) {
+            // Poll events
+            glfwPollEvents();
+
+            glClearColor(r, g, b, a);
+            glClear(GL_COLOR_BUFFER_BIT);
+
+            if (dt >= 0) {
+                currentScene.update(dt);
+            }
+
+            this.imguiLayer.update(dt, currentScene);
+            glfwSwapBuffers(glfwWindow);
+
+            endTime = (float)glfwGetTime();
+            dt = endTime - beginTime;
+            beginTime = endTime;
+        }
+
+        currentScene.saveExit();
     }
 
     public static int getWidth() {
-        return get().Width;
+        return get().width;
     }
 
     public static int getHeight() {
-        return get().Height;
+        return get().height;
     }
 
     public static void setWidth(int newWidth) {
-        get().Width = newWidth;
+        get().width = newWidth;
     }
 
     public static void setHeight(int newHeight) {
-        get().Height = newHeight;
+        get().height = newHeight;
     }
 }

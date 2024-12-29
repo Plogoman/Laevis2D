@@ -1,5 +1,6 @@
 package Laevis;
 
+
 import imgui.*;
 import imgui.callback.ImStrConsumer;
 import imgui.callback.ImStrSupplier;
@@ -109,7 +110,7 @@ public class   ImGuiLayer {
             io.setKeySuper(io.getKeysDown(GLFW_KEY_LEFT_SUPER) || io.getKeysDown(GLFW_KEY_RIGHT_SUPER));
 
             if (!io.getWantCaptureKeyboard()) {
-                KeyListener.KeyCallback(w, key, scancode, action, mods);
+                KeyListener.keyCallback(w, key, scancode, action, mods);
             }
         });
 
@@ -134,7 +135,7 @@ public class   ImGuiLayer {
                 ImGui.setWindowFocus(null);
             }
             if(!io.getWantCaptureMouse()){
-                MouseListener.MouseButtonCallback(w,button,action,mods);
+                MouseListener.mouseButtonCallback(w,button,action,mods);
             }
 
 
@@ -179,7 +180,7 @@ public class   ImGuiLayer {
 
         // Any Dear ImGui code SHOULD go between ImGui.newFrame()/ImGui.render() methods
         ImGui.newFrame();
-        currentScene.sceneImGui();
+        currentScene.sceneImgui();
         ImGui.showDemoWindow();
         ImGui.render();
 
