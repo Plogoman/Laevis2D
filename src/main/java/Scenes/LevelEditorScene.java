@@ -1,4 +1,4 @@
-    package scenes;
+    package Scenes;
 
     import Components.*;
     import Laevis.Camera;
@@ -29,28 +29,14 @@
 
             this.Camera = new Camera(CameraOffsetLocal);
 
-            if(!levelloaded){
+            sprites = AssetPool.GetSpriteSheet("Assets/Images/decorationsAndBlocks.png");
+            if(levelloaded){
                 this.gameObject1=GameObjects.get(0);
-                return;
-            }
-
-             sprites = AssetPool.GetSpriteSheet("Assets/Images/spritesheet.png");
-            if(sprites==null){
-                System.err.println("sprites failed to load ");
                 return;
             }
 
             Vector2f TransformPosition1 = new Vector2f(100, 100);
             Vector2f TransformScale1 = new Vector2f(128, 128);
-
-            Vector2f TransformPosition2 = new Vector2f(220, 100);
-            Vector2f TransformScale2 = new Vector2f(128, 128);
-
-            Vector2f TransformPosition3 = new Vector2f(340, 100);
-            Vector2f TransformScale3 = new Vector2f(128, 128);
-
-            Vector2f TransformPosition4 = new Vector2f(460, 100);
-            Vector2f TransformScale4 = new Vector2f(128, 128);
 
             //TODO try to fix the missing textures shit and implement proper imgui menus
             //added random z index values
@@ -90,8 +76,8 @@
             AssetPool.GetShader("Assets/Shaders/default.glsl");
 
             AssetPool.AddSpriteSheet(
-                "Assets/Images/spritesheet.png",
-                new SpriteSheet(AssetPool.GetTexture("Assets/Images/spritesheet.png"), 16, 16, 26, 0)
+                "Assets/Images/decorationsAndBlocks.png",
+                new SpriteSheet(AssetPool.GetTexture("Assets/Images/decorationsAndBlocks.png"), 16, 16, 81, 0)
             );
         }
         private  int spriteindex=0;

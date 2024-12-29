@@ -1,4 +1,4 @@
-package scenes;
+package Scenes;
 
 import Laevis.*;
 import Renderer.Renderer;

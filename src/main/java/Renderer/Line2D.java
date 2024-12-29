@@ -10,8 +10,6 @@ public class Line2D {
     private Vector3f Color;
     private int Lifetime;
 
-
-
     public Line2D(Vector2f from, Vector2f to, Vector3f color, int lifetime) {
         From = from;
         To = to;

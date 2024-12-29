@@ -2,13 +2,12 @@ package Laevis;
 
 import LaevisUtilities.Time;
 import Renderer.DebugDraw;
-import imgui.ImGui;
 import org.lwjgl.*;
 import org.lwjgl.glfw.*;
 import org.lwjgl.opengl.*;
-import scenes.LevelEditorScene;
-import scenes.LevelScene;
-import scenes.Scene;
+import Scenes.LevelEditorScene;
+import Scenes.LevelScene;
+import Scenes.Scene;
 
 import static org.lwjgl.glfw.Callbacks.*;
 import static org.lwjgl.glfw.GLFW.*;
